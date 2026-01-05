@@ -3,37 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Writing - Alfian Andhika Yudhistira</title>
+    <title>Writing & Opini | Alfian Andhika Yudhistira</title>
     <style>
-        body { font-family: sans-serif; line-height: 1.8; color: #333; max-width: 900px; margin: 0 auto; background: #f4f4f4; padding: 0; }
-        nav { background: #004d40; padding: 15px; text-align: center; }
-        nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
-        main { background: white; padding: 40px; margin-top: 20px; border-radius: 8px; }
-        .article-card { background: #e0f2f1; padding: 20px; margin-bottom: 20px; border-left: 5px solid #004d40; border-radius: 5px; }
-        .article-card a { color: #004d40; text-decoration: none; font-size: 1.2rem; font-weight: bold; }
-        footer { text-align: center; padding: 20px; font-size: 0.8rem; }
+        :root { 
+            --green-aaa: #002d26; --accent: #ffea00; --bg-body: #ffffff;
+            --text-color: #121212; --hero-bg: #f0fdf4; --card-bg: #ffffff;
+        }
+        body.high-contrast {
+            --green-aaa: #ffea00; --bg-body: #000000; --text-color: #ffffff;
+            --accent: #ffffff; --card-bg: #111111;
+            background-color: #000 !important; color: #fff !important;
+        }
+        body { font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.8; color: var(--text-color); max-width: 1050px; margin: 0 auto; background: var(--bg-body); font-size: 1.2rem; transition: 0.3s; }
+        
+        /* NAVIGASI UTAMA */
+        nav { background: var(--green-aaa); padding: 15px 0; text-align: center; position: sticky; top: 0; z-index: 100; border-bottom: 4px solid var(--accent); }
+        nav a { color: #ffffff; margin: 0 15px; font-weight: bold; text-decoration: none; border-bottom: 2px solid transparent; }
+        nav a:hover { border-bottom: 2px solid var(--accent); }
+
+        header { padding: 50px 20px; text-align: center; background: var(--hero-bg); border-bottom: 5px solid var(--green-aaa); }
+
+        main { padding: 40px 20px; }
+        
+        /* ARTIKEL LIST */
+        .article-card { 
+            background: var(--card-bg); border: 2px solid #e2e8f0; border-radius: 12px; 
+            padding: 30px; margin-bottom: 30px; transition: 0.3s;
+        }
+        .article-card:hover { border-color: var(--green-aaa); box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+        
+        .date-tag { color: #666; font-size: 0.9rem; font-weight: bold; }
+        body.high-contrast .date-tag { color: #fff; }
+
+        .article-title { color: var(--green-aaa); text-decoration: none; font-size: 1.6rem; font-weight: bold; display: block; margin: 10px 0; }
+        .article-title:hover { text-decoration: underline; }
+        body.high-contrast .article-title { color: var(--accent); }
+
+        .read-more { color: var(--green-aaa); font-weight: bold; text-decoration: underline; }
+        
+        footer { background: #111; color: #fff; padding: 40px; text-align: center; margin-top: 50px; }
+        .footer-links a { color: #fff; margin: 0 10px; text-decoration: underline; font-size: 0.9rem; }
+
+        /* AKSESIBILITAS TOOLBAR */
+        .a11y-toggle-btn { position: fixed; bottom: 20px; right: 20px; background: var(--green-aaa); color: var(--accent); border: 3px solid #000; width: 65px; height: 65px; border-radius: 50%; cursor: pointer; z-index: 1002; font-size: 2.2rem; display: flex; align-items: center; justify-content: center; }
+        .a11y-toolbar { display: none; background: #f1f5f9; padding: 15px; text-align: center; border-bottom: 4px solid var(--green-aaa); position: sticky; top: 60px; z-index: 101; }
+        .a11y-toolbar.active { display: block; }
+        .a11y-toolbar button { background: var(--green-aaa); color: white; border: 2px solid #000; padding: 10px 18px; margin: 5px; cursor: pointer; font-weight: bold; border-radius: 5px; }
     </style>
 </head>
-<body>
-    <div style="text-align: center; padding: 20px; background: white;">
-    <img src="Logo tanpa background.png" alt="Logo Alfianay" style="max-width: 120px;">
-</div>
-    <nav>
-        <a href="index.html">Beranda</a>
-        <a href="writing.html">Writing</a>
+<body id="bodi">
+
+    <button class="a11y-toggle-btn" onclick="toggleA11yMenu()" aria-label="Menu Aksesibilitas">♿</button>
+    <div id="a11y-menu" class="a11y-toolbar">
+        <button onclick="ubahFont(1.2)">Teks Besar</button>
+        <button onclick="ubahFont(1.0)">Teks Normal</button>
+        <button onclick="gantiKontras()">Mode Kontras Tinggi</button>
+        <button onclick="toggleA11yMenu()" style="background:#cc0000;">Tutup</button>
+    </div>
+
+    <nav aria-label="Navigasi Utama">
+        <a href="index.html">← Beranda</a>
+        <a href="buku-jurnal.html">Buku & Jurnal</a>
+        <a href="skills.html">Keahlian</a>
+        <a href="contact.html">Kontak</a>
     </nav>
-    <main>
-        <h1>Daftar Tulisan</h1>
-        <p>Di bawah ini adalah kumpulan artikel dan pemikiran saya:</p>
+
+    <header>
+        <h1>Writing & Opini</h1>
+        <p>Kumpulan tulisan, gagasan, dan refleksi mengenai Inklusi, Kebijakan Publik, dan Literasi Digital.</p>
+    </header>
+
+    <main id="main-content">
         
-        <div class="article-card">
-            <a href="artikel-1.html">Pesan Inklusi Dari Pengalaman Nyata</a>
-            <p>Diterbitkan pada: Januari 2026</p>
-        </div>
+        <article class="article-card">
+            <span class="date-tag">5 Januari 2026</span>
+            <a href="#" class="article-title">Pentingnya Literasi Digital bagi Disabilitas di Era AI</a>
+            <p>Seiring berkembangnya kecerdasan buatan, aksesibilitas bukan lagi pilihan, melainkan keharusan. Tulisan ini membahas bagaimana teknologi bantu harus beradaptasi...</p>
+            <a href="#" class="read-more">Baca Selengkapnya</a>
+        </article>
+
+        <article class="article-card">
+            <span class="date-tag">20 Desember 2025</span>
+            <a href="#" class="article-title">Inklusi Dari Diri Sendiri: Sebuah Refleksi</a>
+            <p>Seringkali kita menuntut lingkungan untuk inklusif, namun apakah kita sudah mulai membangun pola pikir inklusif dari dalam diri? Catatan mengenai perjalanan akademik dan karir...</p>
+            <a href="#" class="read-more">Baca Selengkapnya</a>
+        </article>
+
+        <article class="article-card">
+            <span class="date-tag">12 November 2025</span>
+            <a href="#" class="article-title">Mengawal Kebijakan Publik yang Ramah Disabilitas</a>
+            <p>Sebagai Penelaah Teknis Kebijakan, saya melihat celah antara regulasi dan implementasi di lapangan. Berikut adalah poin-poin evaluasi...</p>
+            <a href="#" class="read-more">Baca Selengkapnya</a>
+        </article>
+
+        <section style="text-align: center; margin-top: 50px;">
+            <p><em>Tulisan-tulisan lainnya sedang dalam proses pengarsipan.</em></p>
+        </section>
 
     </main>
-    <footer>
-        <a href="accessibility.html">Aksesibilitas</a> | <a href="privacy.html">Privasi</a> | <a href="terms.html">Ketentuan</a>
+
+    <footer role="contentinfo">
+        <div class="footer-links">
+            <a href="accessibility.html">Aksesibilitas</a> | 
+            <a href="privacy.html">Privasi</a> | 
+            <a href="terms.html">Ketentuan</a>
+        </div>
+        <p>&copy; 2026 Alfian Andhika Yudhistira</p>
     </footer>
+
+    <script>
+        function toggleA11yMenu() { document.getElementById('a11y-menu').classList.toggle('active'); }
+        function ubahFont(u) { document.getElementById('bodi').style.fontSize = (u * 1.2) + 'rem'; }
+        function gantiKontras() { document.body.classList.toggle('high-contrast'); }
+    </script>
 </body>
 </html>
