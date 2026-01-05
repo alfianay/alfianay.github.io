@@ -1,65 +1,40 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Keahlian - Alfian Andhika Yudhistira</title>
+    <title>Keahlian - Alfianay</title>
     <style>
-        body { font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.8; color: #333; max-width: 1000px; margin: 0 auto; background: #f4f4f4; padding: 0; }
+        body { font-family: sans-serif; line-height: 1.8; color: #333; max-width: 1000px; margin: 0 auto; background: #f4f4f4; padding: 0; }
         .logo-container { text-align: center; padding: 20px; background: white; }
-        nav { background: #004d40; padding: 10px 0; text-align: center; position: sticky; top: 0; z-index: 999; }
+        nav { background: #004d40; padding: 12px 0; text-align: center; }
         nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
-        main { background: white; padding: 40px; box-shadow: 0 0 20px rgba(0,0,0,0.1); }
+        main { background: white; padding: 40px; }
         h1 { color: #004d40; border-bottom: 3px solid #004d40; padding-bottom: 10px; }
-        .skill-box { background: #f9f9f9; padding: 20px; border-radius: 8px; margin-bottom: 25px; border-left: 5px solid #004d40; }
-        .cta-box { background: #e0f2f1; padding: 25px; border-radius: 10px; border: 2px solid #004d40; text-align: center; margin-top: 40px; }
-        .btn { display: inline-block; background: #004d40; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold; }
+        .skill-card { background: #f9f9f9; padding: 20px; border-left: 5px solid #004d40; margin-bottom: 20px; }
+        .newsletter-box { background: #004d40; color: white; padding: 30px; text-align: center; border-radius: 10px; }
+        .btn-sub { background: #ffca28; color: #333; padding: 12px 25px; border: none; font-weight: bold; cursor: pointer; }
         footer { background: #222; color: white; text-align: center; padding: 30px; margin-top: 40px; }
-        .footer-links a { color: #e0f2f1; margin: 0 10px; text-decoration: none; font-size: 0.8rem; }
     </style>
 </head>
 <body>
-    <div class="logo-container">
-        <img src="Logo tanpa background.png" alt="Logo Alfianay" style="max-width: 120px;">
-    </div>
-    <nav>
-        <a href="index.html">Beranda</a>
-        <a href="writing.html">Writing</a>
-        <a href="skills.html">Keahlian</a>
-        <a href="contact.html">Kontak</a>
-    </nav>
+    <div class="logo-container"><img src="Logo tanpa background.png" alt="Logo Alfianay" style="max-width: 120px;"></div>
+    <nav><a href="index.html">Beranda</a><a href="writing.html">Writing</a><a href="skills.html">Keahlian</a><a href="contact.html">Kontak</a></nav>
     <main>
         <h1>Keahlian & Spesialisasi</h1>
-        
-        <div class="skill-box">
-            <h3>Audit Aksesibilitas Digital</h3>
-            <p>Melakukan pengujian situs web dan aplikasi agar ramah bagi pengguna pembaca layar sesuai standar WCAG 2.1.</p>
-        </div>
+        <div class="skill-card"><h3>Audit Aksesibilitas Digital</h3><p>Menguji fungsionalitas web dan aplikasi bagi pengguna pembaca layar sesuai standar WCAG 2.1.</p></div>
+        <div class="skill-card"><h3>Analisis Kebijakan Publik</h3><p>Penelaahan teknis kebijakan pembangunan SDM dengan perspektif inklusif di instansi pemerintah.</p></div>
+        <div class="skill-card"><h3>Konsultansi SDM Inklusif</h3><p>Strategi pengelolaan tenaga kerja disabilitas agar produktif di lingkungan profesional.</p></div>
 
-        <div class="skill-box">
-            <h3>Analisis Kebijakan Publik</h3>
-            <p>Penelaahan teknis kebijakan pembangunan SDM dengan perspektif inklusif di instansi pemerintah.</p>
-        </div>
-
-        <div class="skill-box">
-            <h3>Konsultansi SDM Inklusif</h3>
-            <p>Pendampingan organisasi dalam membangun lingkungan kerja yang aksesibel bagi penyandang disabilitas.</p>
-        </div>
-
-        <div class="cta-box">
-            <h3>Butuh Konsultansi atau Narasumber Ahli?</h3>
-            <p>Hubungi saya untuk kolaborasi profesional.</p>
-            <a href="contact.html" class="btn">Menuju Halaman Kontak</a>
-        </div>
+        <section class="newsletter-box">
+            <h3>Berlangganan Insight</h3>
+            <p>Masukkan email untuk update seputar aksesibilitas.</p>
+            <form action="https://formspree.io/f/alfianandikay@gmail.com" method="POST">
+                <input type="email" name="email" placeholder="Email Anda" required style="padding:10px; width:250px; border-radius:5px; border:none;">
+                <button type="submit" class="btn-sub">Subscribe</button>
+            </form>
+        </section>
     </main>
-    <footer>
-        <p>&copy; 2026 Alfian Andhika Yudhistira</p>
-        <div class="footer-links">
-            <a href="accessibility.html">Aksesibilitas</a> | 
-            <a href="privacy.html">Privasi</a> | 
-            <a href="terms.html">Ketentuan</a>
-        </div>
-    </footer>
+    <footer><p>📊 Total Pengunjung: 1,250 | &copy; 2026 Alfian Andhika Yudhistira</p></footer>
 </body>
 </html>
