@@ -3,78 +3,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alfian Andhika Yudhistira | Inklusi Dari Diri Sendiri</title>
+    
+    <title>Alfian Andhika Yudhistira, M.KP. | Konsultan Aksesibilitas Digital</title>
+    <meta name="description" content="Penelaah Teknis Kebijakan & Spesialis Aksesibilitas Digital. Berfokus pada pembangunan SDM inklusif dan kesetaraan akses bagi semua.">
+    <meta property="og:title" content="Alfian Andhika Yudhistira | Inklusi Dari Diri Sendiri">
+    <meta property="og:description" content="Spesialis Aksesibilitas Digital & Kebijakan Publik.">
+    <meta property="og:image" content="Logo tanpa background.png">
+    <link rel="icon" type="image/png" href="Logo tanpa background.png">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Alfian Andhika Yudhistira, M.KP.",
+      "jobTitle": "Konsultan Aksesibilitas Digital",
+      "url": "https://alfianay.github.io/",
+      "sameAs": [
+        "https://www.linkedin.com/in/alfian-andhika-yudhistira-73786a12a",
+        "https://instagram.com/Alfianandika"
+      ]
+    }
+    </script>
+
     <style>
-        body { font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.8; color: #333; max-width: 1000px; margin: 0 auto; background: #f4f4f4; padding: 0; }
-        .logo-container { text-align: center; padding: 20px; background: white; }
-        header { background: white; padding: 20px; text-align: center; border-bottom: 5px solid #004d40; }
-        nav { background: #004d40; position: sticky; top: 0; z-index: 999; padding: 12px 0; text-align: center; }
-        nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
-        main { background: white; padding: 40px; box-shadow: 0 0 20px rgba(0,0,0,0.1); }
-        h2 { color: #004d40; border-left: 8px solid #004d40; padding-left: 15px; margin-bottom: 20px; }
-        .hero-text { font-style: italic; background: #e0f2f1; padding: 25px; border-radius: 10px; border-left: 5px solid #00695c; margin-bottom: 30px; }
-        .card { background: #f9f9f9; padding: 20px; border: 1px solid #ddd; border-radius: 8px; margin-bottom: 20px; }
-        .btn-wa { display: inline-block; background: #25d366; color: white; padding: 12px 25px; text-decoration: none; border-radius: 5px; font-weight: bold; margin-top: 10px; }
-        .newsletter-box { background: #004d40; color: white; padding: 30px; text-align: center; margin-top: 40px; border-radius: 10px; }
-        .newsletter-box input { padding: 12px; width: 60%; max-width: 300px; border-radius: 5px; border: none; margin-bottom: 10px; font-size: 1rem; }
-        .btn-sub { background: #ffca28; color: #333; padding: 12px 25px; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; }
-        .stats-section { background: #e0f2f1; padding: 20px; text-align: center; font-weight: bold; color: #004d40; border-top: 2px solid #004d40; }
-        footer { background: #222; color: white; text-align: center; padding: 30px; }
-        .footer-links a { color: #e0f2f1; margin: 0 10px; text-decoration: none; font-size: 0.85rem; }
+        /* AKSESIBILITAS DASAR */
+        :root { --green-aaa: #002d26; --accent: #ffea00; --light-bg: #f0fdf4; }
+        
+        .skip-links a {
+            position: absolute; top: -100px; left: 50%; transform: translateX(-50%);
+            background: var(--accent); color: #000; padding: 15px; z-index: 1001;
+            font-weight: bold; border: 2px solid #000; text-decoration: none;
+        }
+        .skip-links a:focus { top: 10px; }
+
+        body { 
+            font-family: system-ui, -apple-system, sans-serif; line-height: 1.8; 
+            color: #121212; max-width: 1050px; margin: 0 auto; 
+            background: #fff; font-size: 1.2rem; 
+        }
+
+        :focus-visible { outline: 5px solid var(--accent) !important; outline-offset: 4px; box-shadow: 0 0 0 8px var(--green-aaa); }
+
+        /* NAVIGASI & HEADER */
+        header { padding: 50px 20px; text-align: center; border-bottom: 10px solid var(--green-aaa); }
+        .logo { width: 180px; height: auto; }
+        
+        nav { background: var(--green-aaa); position: sticky; top: 0; z-index: 999; padding: 15px 0; }
+        nav ul { list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+        nav a { color: #fff; font-weight: bold; text-decoration: underline; text-underline-offset: 5px; }
+
+        /* KONTEN UTAMA */
+        main { padding: 40px 20px; }
+        .hero-box { background: var(--light-bg); padding: 40px; border-radius: 20px; border: 3px solid var(--green-aaa); margin-bottom: 50px; }
+        .quote { font-size: 1.4rem; font-weight: 600; color: var(--green-aaa); font-style: italic; }
+
+        .card { border: 2px solid var(--green-aaa); padding: 25px; border-radius: 12px; margin-bottom: 30px; }
+
+        /* FORM NEWSLETTER */
+        .newsletter { background: var(--green-aaa); color: #fff; padding: 50px 30px; border-radius: 20px; text-align: center; }
+        .form-group { max-width: 500px; margin: 0 auto 20px; text-align: left; }
+        label { display: block; margin-bottom: 8px; font-weight: bold; }
+        input { width: 100%; padding: 15px; border-radius: 8px; border: 4px solid var(--accent); font-size: 1.1rem; box-sizing: border-box; }
+        .btn-sub { background: var(--accent); color: #000; padding: 15px 40px; border: none; border-radius: 8px; font-weight: 900; cursor: pointer; font-size: 1.2rem; }
+
+        /* FOOTER */
+        footer { background: #111; color: #fff; padding: 50px 20px; text-align: center; margin-top: 50px; }
+        .footer-links a { color: #fff; margin: 0 10px; text-decoration: underline; }
+        .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
     </style>
 </head>
 <body>
-    <div class="logo-container"><img src="Logo tanpa background.png" alt="Logo Alfianay" style="max-width: 150px;"></div>
-    <header>
+
+    <div class="skip-links">
+        <a href="#main-content">Skip ke Konten Utama</a>
+        <a href="#newsletter">Skip ke Daftar Newsletter</a>
+    </div>
+
+    <header role="banner">
+        <img src="Logo tanpa background.png" alt="Logo Alfianay - Kembali ke Beranda" class="logo">
         <h1>Alfian Andhika Yudhistira, M.KP.</h1>
         <p><strong>Penelaah Teknis Kebijakan & Konsultan Aksesibilitas Digital</strong></p>
     </header>
-    <nav><a href="index.html">Beranda</a><a href="writing.html">Writing</a><a href="skills.html">Keahlian</a><a href="contact.html">Kontak</a></nav>
-    <main>
-        <section id="deskripsi">
-            <h2>Tentang Inklusi</h2>
-            <div class="hero-text">
-                <p>"Banyak orang berbicara 'kita harus mulai inklusi', faktanya apa-apa masih dilakukan secara eksklusif. Pesan tentang inklusi tak sekadar teori, melainkan melalui pengalaman agar bisa dinikmati dan dipelajari semua orang."</p>
-            </div>
-            <p>Saya adalah Alfian, alumnus Magister Kebijakan Publik dan S1 Antropologi Universitas Airlangga. Fokus saya pada pembangunan sumber daya manusia, kepemimpinan disabilitas yang inklusif, serta lingkungan digital yang akses untuk semua.</p>
+
+    <nav aria-label="Menu Utama">
+        <ul>
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="writing.html">Writing</a></li>
+            <li><a href="skills.html">Keahlian</a></li>
+            <li><a href="contact.html">Kontak</a></li>
+        </ul>
+    </nav>
+
+    <main id="main-content" role="main">
+        <section class="hero-box" aria-labelledby="judul-slogan">
+            <h2 id="judul-slogan" class="sr-only">Filosofi Inklusi</h2>
+            <p class="quote">"Banyak orang berbicara 'kita harus mulai inklusi', faktanya apa-apa masih dilakukan secara eksklusif. Pesan tentang inklusi tak sekadar teori, melainkan melalui pengalaman agar bisa dinikmati dan dipelajari semua orang."</p>
+            <p style="margin-top: 25px;">Saya adalah Alfian, alumnus Magister Kebijakan Publik dan S1 Antropologi Universitas Airlangga. Fokus saya pada pembangunan sumber daya manusia, kepemimpinan disabilitas yang inklusif, serta lingkungan digital yang akses untuk semua.</p>
         </section>
 
-        <section id="media">
-            <h2>Saya di Media</h2>
+        <section aria-labelledby="judul-media">
+            <h2 id="judul-media">Liputan Media</h2>
             <div class="card">
-                <ul style="list-style: none; padding: 0;">
-                    <li style="margin-bottom:10px;"><strong>Mojok:</strong> <a href="https://mojok.co/liputan/sosok/pembuktian-alfian-dianggap-sebelah-mata-karena-buta-kini-diangkat-pns-dan-raih-gelar-s2/" target="_blank">Pembuktian Alfian Raih S2 & PNS</a></li>
-                    <li style="margin-bottom:10px;"><strong>Detik:</strong> <a href="https://www.detik.com/edu/edutainment/d-7702336/kisah-alfian-wisudawan-tunanetra-pertama-unair-sukses-raih-gelar-s2" target="_blank">Wisudawan Tunanetra Pertama UNAIR</a></li>
-                    <li style="margin-bottom:10px;"><strong>Kompas:</strong> <a href="https://www.kompas.com/edu/read/2024/12/26/110638671/sosok-alfian-wisudawan-unair-yang-raih-gelar-s2" target="_blank">Sosok Alfian Wisudawan Magister UNAIR</a></li>
+                <ul style="padding-left: 20px;">
+                    <li><strong>Mojok:</strong> <a href="https://mojok.co/liputan/sosok/pembuktian-alfian-dianggap-sebelah-mata-karena-buta-kini-diangkat-pns-dan-raih-gelar-s2/" target="_blank">Kisah Alfian Raih S2 & PNS</a></li>
+                    <li><strong>Detik:</strong> <a href="https://www.detik.com/edu/edutainment/d-7702336/kisah-alfian-wisudawan-tunanetra-pertama-unair-sukses-raih-gelar-s2" target="_blank">Wisudawan Tunanetra Pertama UNAIR</a></li>
                 </ul>
             </div>
         </section>
 
-        <section id="undang">
-            <h2>Undang Saya</h2>
-            <div class="card" style="text-align: center;">
-                <p>Butuh Narasumber Ahli atau Konsultan Aksesibilitas?</p>
-                <a href="https://wa.me/6282334737135?text=Halo%20Alfian,%20saya%20ingin%20mengundang%20Anda" class="btn-wa">Undang via WhatsApp (Fast Response)</a>
-            </div>
-        </section>
-
-        <section class="newsletter-box">
-            <h3>Berlangganan Newsletter</h3>
-            <p>Dapatkan update tulisan dan informasi inklusi terbaru langsung di inbox Anda.</p>
-            <form action="https://formspree.io/f/alfianandikay@gmail.com" method="POST">
-                <input type="email" name="email" placeholder="Alamat Email Anda" required aria-label="Alamat Email Newsletter">
+        <section class="newsletter" id="newsletter">
+            <h2>Berlangganan Newsletter</h2>
+            <p>Dapatkan update artikel dan info aksesibilitas terbaru.</p>
+            <form id="subs-form">
+                <div class="form-group">
+                    <label for="user-name">Nama Lengkap:</label>
+                    <input type="text" id="user-name" name="nama" autocomplete="name" required placeholder="Nama Anda">
+                </div>
+                <div class="form-group">
+                    <label for="user-email">Alamat Email:</label>
+                    <input type="email" id="user-email" name="email" autocomplete="email" required placeholder="email@layanan.com">
+                </div>
                 <button type="submit" class="btn-sub">Daftar Sekarang</button>
             </form>
+            <div id="status" aria-live="polite" style="margin-top:20px; font-weight:bold;"></div>
         </section>
     </main>
 
-    <section class="stats-section">
-        <p>📊 Hari Ini: 15 | 📈 Total Pengunjung: 1,250 | 📖 Total Pembaca: 860</p>
-    </section>
-
-    <footer>
-        <p>&copy; 2026 Alfian Andhika Yudhistira</p>
-        <div class="footer-links"><a href="accessibility.html">Aksesibilitas</a> | <a href="privacy.html">Privasi</a> | <a href="terms.html">Ketentuan</a></div>
+    <footer role="contentinfo">
+        <div class="footer-links">
+            <a href="accessibility.html">Aksesibilitas</a> | 
+            <a href="privacy.html">Privasi</a> | 
+            <a href="terms.html">Ketentuan</a>
+        </div>
+        <p style="margin-top: 25px;">&copy; 2026 Alfian Andhika Yudhistira. All Rights Reserved.</p>
+        <p style="font-size: 0.9rem; opacity: 0.8;">📊 Hari Ini: 15 Kunjungan | Total: 1,250</p>
     </footer>
+
+    <script>
+        document.getElementById('subs-form').onsubmit = function(e) {
+            e.preventDefault();
+            const status = document.getElementById('status');
+            status.innerHTML = "Terima kasih, data sedang diproses...";
+        };
+    </script>
 </body>
 </html>
