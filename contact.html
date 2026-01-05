@@ -2,21 +2,30 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>Kontak - Alfianay</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontak - Alfian Andhika Yudhistira</title>
     <style>
-        body { font-family: sans-serif; line-height: 1.8; color: #333; max-width: 900px; margin: 0 auto; background: #f4f4f4; padding: 0; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.8; color: #333; max-width: 1000px; margin: 0 auto; background: #f4f4f4; padding: 0; }
         .logo-container { text-align: center; padding: 20px; background: white; }
-        nav { background: #004d40; padding: 15px; text-align: center; }
+        nav { background: #004d40; padding: 12px 0; text-align: center; position: sticky; top: 0; z-index: 999; }
         nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
-        main { background: white; padding: 40px; margin-top: 20px; }
-        .contact-card { background: #e0f2f1; padding: 25px; border-radius: 10px; border: 2px solid #004d40; }
-        .btn { display: inline-block; background: #004d40; color: white; padding: 12px 25px; text-decoration: none; border-radius: 5px; font-weight: bold; margin-top: 15px; }
+        main { background: white; padding: 40px; box-shadow: 0 0 20px rgba(0,0,0,0.1); }
+        h1 { color: #004d40; border-bottom: 3px solid #004d40; padding-bottom: 10px; }
+        .card { background: #f9f9f9; padding: 20px; border-radius: 8px; border: 1px solid #ddd; margin-bottom: 25px; text-align: center; }
+        .btn { display: inline-block; padding: 12px 25px; text-decoration: none; border-radius: 5px; font-weight: bold; margin: 10px; color: white; }
+        .btn-wa { background: #25d366; }
+        .btn-li { background: #0077b5; }
+        .btn-yt { background: #ff0000; }
+        .btn-ig { background: #e1306c; }
+        .btn-tk { background: #000000; }
+        .newsletter-box { background: #004d40; color: white; padding: 30px; text-align: center; border-radius: 10px; margin-top: 40px; }
+        .newsletter-box input { padding: 12px; width: 60%; max-width: 300px; border-radius: 5px; border: none; margin-bottom: 10px; }
+        .btn-sub { background: #ffca28; color: #333; padding: 12px 25px; border: none; font-weight: bold; cursor: pointer; border-radius: 5px; }
+        footer { background: #222; color: white; text-align: center; padding: 30px; margin-top: 40px; }
     </style>
 </head>
 <body>
-    <div class="logo-container">
-        <img src="Logo tanpa background.png" alt="Logo Alfianay" style="max-width: 120px;">
-    </div>
+    <div class="logo-container"><img src="Logo tanpa background.png" alt="Logo Alfianay" style="max-width: 120px;"></div>
     <nav>
         <a href="index.html">Beranda</a>
         <a href="writing.html">Writing</a>
@@ -25,15 +34,32 @@
     </nav>
     <main>
         <h1>Mari Terhubung</h1>
-        <div class="contact-card">
-            <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/alfian-andhika-yudhistira-73786a12a" target="_blank">Alfian Andhika Yudhistira</a></p>
-            <p><strong>Email:</strong> me@alfianay.com</p>
-            <p><strong>WhatsApp:</strong> 082334737135</p>
-            <hr>
-            <h3>Undang Saya</h3>
-            <p>Butuh narasumber, konsultan aksesibilitas, atau fasilitator pelatihan?</p>
-            <a href="https://wa.me/6282334737135" class="btn">Hubungi via WhatsApp</a>
+        <div class="card">
+            <p>Untuk undangan narasumber, konsultansi, atau kolaborasi profesional:</p>
+            <a href="https://wa.me/6282334737135?text=Halo%20Alfian,%20saya%20tertarik%20bekerja%20sama" class="btn btn-wa">Chat WhatsApp Sekarang</a>
+            <p>Atau melalui email di: <strong>me@alfianay.com</strong></p>
         </div>
+
+        <div class="card">
+            <h3>Ikuti & Berlangganan (Subscribe)</h3>
+            <p>Dapatkan konten edukasi inklusi di platform lainnya:</p>
+            <a href="https://www.linkedin.com/in/alfian-andhika-yudhistira-73786a12a" class="btn btn-li" target="_blank">LinkedIn</a>
+            <a href="https://www.youtube.com/channel/UC6_34TWByyt-T3GRrIgq04g" class="btn btn-yt" target="_blank">YouTube</a>
+            <a href="https://tiktok.com/@Alfian_ay" class="btn btn-tk" target="_blank">TikTok</a>
+            <a href="https://instagram.com/Alfianandika" class="btn btn-ig" target="_blank">Instagram</a>
+        </div>
+
+        <section class="newsletter-box">
+            <h3>Newsletter Email</h3>
+            <p>Dapatkan update tulisan terbaru langsung di inbox Anda.</p>
+            <form action="https://formspree.io/f/alfianandikay@gmail.com" method="POST">
+                <input type="email" name="email" placeholder="Alamat Email Anda" required aria-label="Input Email Newsletter">
+                <button type="submit" class="btn-sub">Daftar Newsletter</button>
+            </form>
+        </section>
     </main>
+    <footer>
+        <p>📊 Total Pengunjung: 1,250 | &copy; 2026 Alfian Andhika Yudhistira</p>
+    </footer>
 </body>
 </html>
