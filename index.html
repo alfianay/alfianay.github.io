@@ -46,11 +46,13 @@
 
         .skip-links a {
             position: absolute; top: -100px; left: 50%; transform: translateX(-50%);
-            background: var(--accent); color: #000; padding: 15px; z-index: 1001; font-weight: bold; border: 2px solid #000;
+            background: var(--accent); color: #000; padding: 15px; z-index: 1001; font-weight: bold; border: 2px solid #000; text-decoration: none;
         }
         .skip-links a:focus { top: 10px; }
 
         header { padding: 40px 20px; text-align: center; border-bottom: 10px solid var(--green-aaa); }
+        .logo { width: 180px; }
+        
         nav { background: var(--green-aaa); padding: 15px 0; text-align: center; }
         nav ul { list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
         nav a { color: #ffffff; font-weight: bold; text-decoration: underline; }
@@ -62,14 +64,16 @@
         .card { border: 2px solid var(--green-aaa); padding: 25px; border-radius: 12px; margin-bottom: 30px; background: var(--card-bg); }
         .media-list { padding-left: 20px; list-style-type: square; }
         .media-list li { margin-bottom: 15px; border-bottom: 1px solid #ddd; padding-bottom: 5px; }
-        .media-list a { color: inherit; font-weight: bold; }
+        .media-list a { color: #0056b3; font-weight: bold; text-decoration: underline; }
+        body.high-contrast .media-list a { color: var(--accent); }
 
-        .newsletter-section { background: var(--green-aaa); color: #fff; padding: 60px 30px; border-radius: 20px; text-align: center; }
+        .newsletter-section { background: var(--green-aaa); color: #fff; padding: 60px 30px; border-radius: 20px; text-align: center; margin-top: 50px; }
         .form-group { max-width: 500px; margin: 0 auto 20px; text-align: left; }
-        input { width: 100%; padding: 15px; border-radius: 8px; border: 4px solid var(--accent); font-size: 1.1rem; }
-        .btn-sub { background: var(--accent); color: #000; padding: 15px 50px; border-radius: 8px; font-weight: 900; cursor: pointer; border: 2px solid #000; }
+        input { width: 100%; padding: 15px; border-radius: 8px; border: 4px solid var(--accent); font-size: 1.1rem; box-sizing: border-box; }
+        .btn-sub { background: var(--accent); color: #000; padding: 15px 50px; border: 2px solid #000; border-radius: 8px; font-weight: 900; cursor: pointer; }
 
         footer { background: #111; color: #fff; padding: 50px 20px; text-align: center; margin-top: 50px; }
+        .footer-links a { color: #fff; margin: 0 10px; }
     </style>
 </head>
 <body id="bodi">
@@ -89,7 +93,7 @@
     </div>
 
     <header role="banner">
-        <img src="Logo tanpa background.png" alt="Logo Alfianay" style="width:180px;">
+        <img src="Logo tanpa background.png" alt="Logo Alfianay" class="logo">
         <h1>Alfian Andhika Yudhistira, M.KP.</h1>
         <p><strong>Penelaah Teknis Kebijakan & Konsultan Aksesibilitas Digital</strong></p>
     </header>
@@ -109,26 +113,43 @@
             <p style="margin-top: 25px;">Halo, saya <strong>Alfian</strong>. Saya adalah alumnus Magister Kebijakan Publik dan S1 Antropologi Universitas Airlangga. Perjalanan hidup dan akademik saya dedikasikan untuk pembangunan sumber daya manusia yang inklusif, kepemimpinan disabilitas, serta memastikan lingkungan digital dapat diakses secara setara oleh semua individu tanpa hambatan.</p>
         </section>
 
-        <section aria-labelledby="judul-media">
-            <h2 id="judul-media" style="color: var(--green-aaa)">Liputan & Publikasi Media</h2>
+        <section aria-labelledby="judul-karya">
+            <h2 id="judul-karya" style="color: var(--green-aaa)">Buku & Karya Tulis</h2>
             <div class="card">
                 <ul class="media-list">
-                    <li><strong>tvOne (Video 1):</strong> <a href="https://www.youtube.com/watch?v=D-v7WfV0Rnc" target="_blank">Kisah Alfian: Wisudawan Tunanetra Pertama Magister UNAIR - tvOne</a></li>
-                    <li><strong>tvOne (Video 2):</strong> <a href="https://www.youtube.com/watch?v=FOfR0-i7pWk" target="_blank">Inspirasi Alfian: Menembus Batas dalam Keterbatasan - tvOne</a></li>
-                    <li><strong>Mojok.co:</strong> <a href="https://mojok.co/liputan/sosok/pembuktian-alfian-dianggap-sebelah-mata-karena-buta-kini-diangkat-pns-dan-raih-gelar-s2/" target="_blank">Pembuktian Alfian: Dianggap Sebelah Mata, Kini PNS & Raih Gelar S2</a></li>
-                    <li><strong>DetikEdu:</strong> <a href="https://www.detik.com/edu/edutainment/d-7702336/kisah-alfian-wisudawan-tunanetra-pertama-unair-sukses-raih-gelar-s2" target="_blank">Kisah Alfian Wisudawan Tunanetra Pertama S2 UNAIR - Detik.com</a></li>
-                    <li><strong>Kompas:</strong> <a href="https://www.kompas.com/edu/read/2024/12/26/110638671/sosok-alfian-wisudawan-unair-yang-raih-gelar-s2" target="_blank">Sosok Alfian Wisudawan UNAIR Raih Gelar S2 - Kompas.com</a></li>
-                    <li><strong>Official UNAIR:</strong> <a href="https://unair.ac.id/kisah-inspiratif-alfian-wisudawan-tunanetra-pertama-magister-unair/" target="_blank">Kisah Inspiratif Alfian Wisudawan Tunanetra Pertama Magister UNAIR</a></li>
+                    <li><strong>Buku Saku:</strong> "Enjoy Membangun Hubungan Kerja Dengan Pegawai Disabilitas Netra"</li>
+                    <li><strong>Tesis Magister:</strong> "Kapasitas Individu Penyelenggara Pemilu: Studi Kasus Pemilu 2019 Bagi Pemilih Disabilitas di Kota Surabaya"</li>
+                    <li><strong>Kumpulan Artikel:</strong> <a href="writing.html">Lihat publikasi dan karya tulis selengkapnya di halaman Writing</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section aria-labelledby="judul-media">
+            <h2 id="judul-media" style="color: var(--green-aaa)">Liputan Media</h2>
+            <div class="card">
+                <ul class="media-list">
+                    <li><strong>tvOne (Video 1):</strong> <a href="https://www.youtube.com/watch?v=D-v7WfV0Rnc" target="_blank">Wisudawan Tunanetra Pertama Magister UNAIR - tvOne News</a></li>
+                    <li><strong>tvOne (Video 2):</strong> <a href="https://www.youtube.com/watch?v=FOfR0-i7pWk" target="_blank">Inspirasi Alfian: Menembus Batas - tvOne</a></li>
+                    <li><strong>Mojok.co:</strong> <a href="https://mojok.co/liputan/sosok/pembuktian-alfian-dianggap-sebelah-mata-karena-buta-kini-diangkat-pns-dan-raih-gelar-s2/" target="_blank">Pembuktian Alfian: Kini PNS & Raih Gelar S2 - Mojok</a></li>
+                    <li><strong>DetikEdu:</strong> <a href="https://www.detik.com/edu/edutainment/d-7702336/kisah-alfian-wisudawan-tunanetra-pertama-unair-sukses-raih-gelar-s2" target="_blank">Kisah Alfian Wisudawan Tunanetra Pertama S2 - Detik.com</a></li>
+                    <li><strong>Kompas:</strong> <a href="https://www.kompas.com/edu/read/2024/12/26/110638671/sosok-alfian-wisudawan-unair-yang-raih-gelar-s2" target="_blank">Sosok Alfian Wisudawan UNAIR Raih Gelar S2 - Kompas</a></li>
+                    <li><strong>Official UNAIR:</strong> <a href="https://unair.ac.id/kisah-inspiratif-alfian-wisudawan-tunanetra-pertama-magister-unair/" target="_blank">Kisah Inspiratif Alfian - Official UNAIR</a></li>
                 </ul>
             </div>
         </section>
 
         <section class="newsletter-section" id="newsletter-target">
-            <h2>Langganan Newsletter</h2>
-            <p>Dapatkan update artikel aksesibilitas dan kebijakan inklusi terbaru.</p>
+            <h2>Berlangganan Newsletter</h2>
+            <p>Dapatkan update artikel aksesibilitas langsung di email Anda.</p>
             <form id="subs-form">
-                <div class="form-group"><label for="u-name" style="color:inherit">Nama:</label><input type="text" id="u-name" name="nama" required placeholder="Nama Lengkap"></div>
-                <div class="form-group"><label for="u-email" style="color:inherit">Email:</label><input type="email" id="u-email" name="email" required placeholder="email@contoh.com"></div>
+                <div class="form-group">
+                    <label for="user-name" style="color:inherit">Nama Lengkap:</label>
+                    <input type="text" id="user-name" required placeholder="Masukkan Nama Anda">
+                </div>
+                <div class="form-group">
+                    <label for="user-email" style="color:inherit">Alamat Email:</label>
+                    <input type="email" id="user-email" required placeholder="nama@email.com">
+                </div>
                 <button type="submit" class="btn-sub">Daftar Sekarang</button>
             </form>
             <div id="status" aria-live="polite" style="margin-top:20px; font-weight:bold;"></div>
@@ -144,7 +165,7 @@
         function toggleA11yMenu() { document.getElementById('a11y-menu').classList.toggle('active'); }
         function ubahFont(u) { document.getElementById('bodi').style.fontSize = (u * 1.2) + 'rem'; }
         function gantiKontras() { document.body.classList.toggle('high-contrast'); }
-        document.getElementById('subs-form').onsubmit = function(e) { e.preventDefault(); document.getElementById('status').innerHTML = "Terima kasih, pendaftaran diproses!"; };
+        document.getElementById('subs-form').onsubmit = function(e) { e.preventDefault(); document.getElementById('status').innerHTML = "Terima kasih, pendaftaran sedang diproses!"; };
     </script>
 </body>
 </html>
