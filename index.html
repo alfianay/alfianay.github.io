@@ -16,7 +16,6 @@
         }
         body { font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.8; color: var(--text-color); max-width: 1050px; margin: 0 auto; background: var(--bg-body); font-size: 1.2rem; transition: 0.3s; }
         
-        /* A11Y TOOLS */
         .skip-links a { position: absolute; top: -100px; left: 50%; transform: translateX(-50%); background: var(--accent); color: #000; padding: 15px; z-index: 1001; font-weight: bold; border: 2px solid #000; text-decoration: none; }
         .skip-links a:focus { top: 10px; }
         .a11y-toggle-btn { position: fixed; bottom: 20px; right: 20px; background: var(--green-aaa); color: var(--accent); border: 3px solid #000; width: 65px; height: 65px; border-radius: 50%; cursor: pointer; z-index: 1002; font-size: 2.2rem; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(0,0,0,0.4); }
@@ -31,6 +30,8 @@
         main { padding: 40px 20px; }
         .hero-box { background: var(--hero-bg); padding: 40px; border-radius: 20px; border: 3px solid var(--green-aaa); margin-bottom: 40px; }
         .card { border: 2px solid var(--green-aaa); padding: 25px; border-radius: 12px; margin-bottom: 30px; background: var(--card-bg); }
+        .media-list { list-style: none; padding-left: 0; }
+        .media-list li { margin-bottom: 10px; padding-bottom: 5px; border-bottom: 1px solid #eee; }
         .media-list a { color: #0056b3; font-weight: bold; text-decoration: underline; }
         body.high-contrast .media-list a { color: var(--accent); }
 
@@ -38,14 +39,8 @@
         .btn-sub { background: var(--accent); color: #000; padding: 15px 50px; border-radius: 8px; font-weight: 900; cursor: pointer; border: 2px solid #000; }
         
         footer { background: #111; color: #fff; padding: 40px; text-align: center; margin-top: 50px; }
+        .stats-box { background: #222; color: var(--accent); display: inline-block; padding: 10px 20px; border-radius: 8px; margin-bottom: 20px; border: 1px solid var(--accent); font-family: monospace; }
         .footer-links a { color: #fff; margin: 0 10px; text-decoration: underline; font-size: 0.9rem; }
-        
-        /* BOX STATISTIK REAL-TIME */
-        .stats-box { 
-            background: #222; color: var(--accent); display: inline-block; 
-            padding: 10px 20px; border-radius: 8px; margin-bottom: 20px; 
-            font-weight: bold; border: 1px solid var(--accent); font-family: monospace; 
-        }
     </style>
 </head>
 <body id="bodi">
@@ -55,7 +50,7 @@
         <a href="#contact-home">Skip ke Kontak & Sosmed</a>
     </div>
 
-    <button class="a11y-toggle-btn" onclick="toggleA11yMenu()" aria-label="Buka Menu Aksesibilitas">♿</button>
+    <button class="a11y-toggle-btn" onclick="toggleA11yMenu()" aria-label="Menu Aksesibilitas">♿</button>
     <div id="a11y-menu" class="a11y-toolbar">
         <button onclick="ubahFont(1.2)">Teks Besar</button>
         <button onclick="ubahFont(1.0)">Teks Normal</button>
@@ -86,24 +81,25 @@
         <section id="contact-home">
             <h2 style="color: var(--green-aaa)">Hubungi Saya</h2>
             <div class="card">
-                <ul class="media-list" style="list-style: none; padding-left: 0;">
+                <ul class="media-list">
                     <li>📩 <strong>Email:</strong> <a href="mailto:me@alfianay.com">me@alfianay.com</a></li>
                     <li>📱 <strong>WhatsApp:</strong> <a href="https://wa.me/6282334737135" target="_blank">082334737135</a></li>
                     <li>🔗 <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/alfian-andhika-yudhistira-73786a12a" target="_blank">Alfian Andhika Yudhistira</a></li>
                     <li>📸 <strong>Instagram:</strong> <a href="https://instagram.com/Alfianandika" target="_blank">@Alfianandika</a></li>
                     <li>🎥 <strong>YouTube:</strong> <a href="https://www.youtube.com/channel/UC6_34TWByyt-T3GRrIgq04g" target="_blank">Alfian_ay Channel</a></li>
+                    <li>🎵 <strong>TikTok:</strong> <a href="https://www.tiktok.com/@Alfian_ay" target="_blank">@Alfian_ay</a></li>
                 </ul>
             </div>
         </section>
 
         <section>
-            <h2 style="color: var(--green-aaa)">Publikasi Terkini</h2>
+            <h2 style="color: var(--green-aaa)">Publikasi & Karya</h2>
             <div class="card">
                 <ul style="list-style-type: square; padding-left: 20px;">
-                    <li><strong>Jurnal Biokultur:</strong> Analisis Antropologi di UNAIR.</li>
+                    <li><strong>Jurnal Biokultur:</strong> Jurnal Antropologi Biokultur UNAIR.</li>
                     <li><strong>Buku Saku:</strong> Enjoy Membangun Hubungan Kerja Dengan Pegawai Disabilitas Netra.</li>
                 </ul>
-                <a href="buku-jurnal.html" style="font-weight:bold; color:var(--green-aaa);">&raquo; Lihat & Download Semua Karya</a>
+                <a href="buku-jurnal.html" style="font-weight:bold; color:var(--green-aaa);">&raquo; Buka Halaman Buku & Jurnal</a>
             </div>
         </section>
 
@@ -119,15 +115,12 @@
         </section>
     </main>
 
-    <footer role="contentinfo">
-        <div class="stats-box" aria-live="polite">
+    <footer>
+        <div class="stats-box">
             📊 Total Pengunjung: <span id="visit-count">Memuat...</span>
         </div>
-
         <div class="footer-links">
-            <a href="accessibility.html">Aksesibilitas</a> | 
-            <a href="privacy.html">Privasi</a> | 
-            <a href="terms.html">Ketentuan</a>
+            <a href="accessibility.html">Aksesibilitas</a> | <a href="privacy.html">Privasi</a> | <a href="terms.html">Ketentuan</a>
         </div>
         <p>&copy; 2026 Alfian Andhika Yudhistira</p>
     </footer>
@@ -137,16 +130,13 @@
         function ubahFont(u) { document.getElementById('bodi').style.fontSize = (u * 1.2) + 'rem'; }
         function gantiKontras() { document.body.classList.toggle('high-contrast'); }
 
-        // SCRIPT COUNTER REAL-TIME
-        // Menggunakan countapi.xyz (Gratis & Anonim)
         async function getVisits() {
             try {
-                // Namespace unik menggunakan namamu agar tidak tertukar dengan web lain
                 const response = await fetch('https://api.countapi.xyz/hit/alfianay.github.io/visits');
                 const data = await response.json();
                 document.getElementById('visit-count').innerText = data.value.toLocaleString();
             } catch (error) {
-                document.getElementById('visit-count').innerText = "1,250+"; // Fallback jika API sedang down
+                document.getElementById('visit-count').innerText = "1,250+";
             }
         }
         getVisits();
