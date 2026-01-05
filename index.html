@@ -28,7 +28,22 @@
         nav a { color: #ffffff; margin: 0 15px; font-weight: bold; text-decoration: underline; }
 
         main { padding: 40px 20px; }
+        
+        /* PENGATURAN FOTO PROFIL */
         .hero-box { background: var(--hero-bg); padding: 40px; border-radius: 20px; border: 3px solid var(--green-aaa); margin-bottom: 40px; }
+        .hero-flex { display: flex; align-items: center; gap: 30px; flex-wrap: wrap; }
+        .main-photo { 
+            width: 220px; 
+            height: auto; 
+            border-radius: 15px; 
+            border: 4px solid var(--green-aaa); 
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15); 
+        }
+        @media (max-width: 768px) {
+            .hero-flex { flex-direction: column; text-align: center; }
+            .main-photo { width: 180px; }
+        }
+
         .card { border: 2px solid var(--green-aaa); padding: 25px; border-radius: 12px; margin-bottom: 30px; background: var(--card-bg); }
         .media-list { list-style: none; padding-left: 0; }
         .media-list li { margin-bottom: 10px; padding-bottom: 5px; border-bottom: 1px solid #eee; }
@@ -74,8 +89,14 @@
 
     <main id="main-content">
         <section class="hero-box">
-            <h2 style="margin-top:0;">Inklusi Dari Diri Sendiri.</h2>
-            <p>Alumnus Magister Kebijakan Publik dan S1 Antropologi Universitas Airlangga. Fokus pada pembangunan sumber daya manusia dan kepemimpinan disabilitas yang inklusif serta lingkungan fisik dan digital yang akses untuk semua.</p>
+            <div class="hero-flex">
+                <img src="Alfian Andhika Yudhistira.png" alt="Foto profil profesional Alfian Andhika Yudhistira mengenakan jas hitam dan dasi" class="main-photo">
+                
+                <div class="hero-text">
+                    <h2 style="margin-top:0;">Inklusi Dari Diri Sendiri.</h2>
+                    <p>Alumnus Magister Kebijakan Publik dan S1 Antropologi Universitas Airlangga. Fokus pada pembangunan sumber daya manusia dan kepemimpinan disabilitas yang inklusif serta lingkungan fisik dan digital yang akses untuk semua.</p>
+                </div>
+            </div>
         </section>
 
         <section id="contact-home">
