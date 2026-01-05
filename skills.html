@@ -3,38 +3,145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Keahlian - Alfianay</title>
+    <title>Keahlian & Layanan | Alfian Andhika Yudhistira</title>
     <style>
-        body { font-family: sans-serif; line-height: 1.8; color: #333; max-width: 1000px; margin: 0 auto; background: #f4f4f4; padding: 0; }
-        .logo-container { text-align: center; padding: 20px; background: white; }
-        nav { background: #004d40; padding: 12px 0; text-align: center; }
-        nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
-        main { background: white; padding: 40px; }
-        h1 { color: #004d40; border-bottom: 3px solid #004d40; padding-bottom: 10px; }
-        .skill-card { background: #f9f9f9; padding: 20px; border-left: 5px solid #004d40; margin-bottom: 20px; }
-        .newsletter-box { background: #004d40; color: white; padding: 30px; text-align: center; border-radius: 10px; }
-        .btn-sub { background: #ffca28; color: #333; padding: 12px 25px; border: none; font-weight: bold; cursor: pointer; }
-        footer { background: #222; color: white; text-align: center; padding: 30px; margin-top: 40px; }
+        :root { 
+            --green-aaa: #002d26; --accent: #ffea00; --bg-body: #ffffff;
+            --text-color: #121212; --hero-bg: #f0fdf4; --card-bg: #ffffff;
+        }
+        body.high-contrast {
+            --green-aaa: #ffea00; --bg-body: #000000; --text-color: #ffffff;
+            --accent: #ffffff; --card-bg: #111111;
+            background-color: #000 !important; color: #fff !important;
+        }
+        body { font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.8; color: var(--text-color); max-width: 1050px; margin: 0 auto; background: var(--bg-body); font-size: 1.2rem; transition: 0.3s; }
+        
+        /* NAVIGASI */
+        nav { background: var(--green-aaa); padding: 15px 0; text-align: center; position: sticky; top: 0; z-index: 100; border-bottom: 4px solid var(--accent); }
+        nav a { color: #ffffff; margin: 0 15px; font-weight: bold; text-decoration: none; border-bottom: 2px solid transparent; }
+        nav a:hover { border-bottom: 2px solid var(--accent); }
+
+        header { padding: 50px 20px; text-align: center; background: var(--hero-bg); border-bottom: 5px solid var(--green-aaa); }
+
+        main { padding: 40px 20px; }
+
+        /* SKILLS GRID */
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+        .skill-card { 
+            background: var(--card-bg); border: 2px solid var(--green-aaa); 
+            border-radius: 15px; padding: 30px; transition: 0.3s;
+            display: flex; flex-direction: column;
+        }
+        .skill-card:hover { transform: scale(1.02); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        .skill-icon { font-size: 2.5rem; margin-bottom: 15px; }
+        .skill-card h2 { color: var(--green-aaa); margin-top: 0; font-size: 1.5rem; }
+        body.high-contrast .skill-card h2 { color: var(--accent); }
+
+        /* CALL TO ACTION */
+        .cta-box { 
+            background: var(--green-aaa); color: #fff; padding: 40px; 
+            border-radius: 15px; text-align: center; margin-top: 50px; 
+            border: 2px solid var(--accent);
+        }
+        .btn-contact { 
+            background: var(--accent); color: #000; padding: 15px 40px; 
+            border-radius: 8px; text-decoration: none; font-weight: 900; 
+            display: inline-block; margin-top: 20px; border: 2px solid #000;
+        }
+
+        footer { background: #111; color: #fff; padding: 40px; text-align: center; margin-top: 50px; }
+        .footer-links a { color: #fff; margin: 0 10px; text-decoration: underline; font-size: 0.9rem; }
+
+        /* A11Y TOOLBAR */
+        .a11y-toggle-btn { position: fixed; bottom: 20px; right: 20px; background: var(--green-aaa); color: var(--accent); border: 3px solid #000; width: 65px; height: 65px; border-radius: 50%; cursor: pointer; z-index: 1002; font-size: 2.2rem; display: flex; align-items: center; justify-content: center; }
+        .a11y-toolbar { display: none; background: #f1f5f9; padding: 15px; text-align: center; border-bottom: 4px solid var(--green-aaa); position: sticky; top: 60px; z-index: 101; }
+        .a11y-toolbar.active { display: block; }
+        .a11y-toolbar button { background: var(--green-aaa); color: white; border: 2px solid #000; padding: 10px 18px; margin: 5px; cursor: pointer; font-weight: bold; border-radius: 5px; }
     </style>
 </head>
-<body>
-    <div class="logo-container"><img src="Logo tanpa background.png" alt="Logo Alfianay" style="max-width: 120px;"></div>
-    <nav><a href="index.html">Beranda</a><a href="writing.html">Writing</a><a href="skills.html">Keahlian</a><a href="contact.html">Kontak</a></nav>
-    <main>
-        <h1>Keahlian & Spesialisasi</h1>
-        <div class="skill-card"><h3>Audit Aksesibilitas Digital</h3><p>Menguji fungsionalitas web dan aplikasi bagi pengguna pembaca layar sesuai standar WCAG 2.1.</p></div>
-        <div class="skill-card"><h3>Analisis Kebijakan Publik</h3><p>Penelaahan teknis kebijakan pembangunan SDM dengan perspektif inklusif di instansi pemerintah.</p></div>
-        <div class="skill-card"><h3>Konsultansi SDM Inklusif</h3><p>Strategi pengelolaan tenaga kerja disabilitas agar produktif di lingkungan profesional.</p></div>
+<body id="bodi">
 
-        <section class="newsletter-box">
-            <h3>Berlangganan Insight</h3>
-            <p>Masukkan email untuk update seputar aksesibilitas.</p>
-            <form action="https://formspree.io/f/alfianandikay@gmail.com" method="POST">
-                <input type="email" name="email" placeholder="Email Anda" required style="padding:10px; width:250px; border-radius:5px; border:none;">
-                <button type="submit" class="btn-sub">Subscribe</button>
-            </form>
+    <button class="a11y-toggle-btn" onclick="toggleA11yMenu()" aria-label="Menu Aksesibilitas">♿</button>
+    <div id="a11y-menu" class="a11y-toolbar">
+        <button onclick="ubahFont(1.2)">Teks Besar</button>
+        <button onclick="ubahFont(1.0)">Teks Normal</button>
+        <button onclick="gantiKontras()">Mode Kontras Tinggi</button>
+        <button onclick="toggleA11yMenu()" style="background:#cc0000;">Tutup</button>
+    </div>
+
+    <nav aria-label="Navigasi Utama">
+        <a href="index.html">← Beranda</a>
+        <a href="buku-jurnal.html">Buku & Jurnal</a>
+        <a href="writing.html">Writing</a>
+        <a href="contact.html">Kontak</a>
+    </nav>
+
+    <header>
+        <h1>Keahlian & Layanan Profesional</h1>
+        <p>Solusi strategis untuk pembangunan inklusi, aksesibilitas digital, dan pengembangan SDM.</p>
+    </header>
+
+    <main id="main-content">
+        <div class="skills-grid">
+            
+            <section class="skill-card">
+                <div class="skill-icon" aria-hidden="true">🔍</div>
+                <h2>Audit Aksesibilitas Digital</h2>
+                <p>Melakukan review komprehensif pada website atau aplikasi mobile untuk memastikan ramah bagi pengguna pembaca layar (Screen Reader) sesuai standar WCAG.</p>
+            </section>
+
+            <section class="skill-card">
+                <div class="skill-icon" aria-hidden="true">🎤</div>
+                <h2>Konsultan & Narasumber</h2>
+                <p>Menjadi fasilitator atau pemateri dalam topik Kebijakan Publik, Inklusi Sosial, Kepemimpinan Disabilitas, dan bagaimana membangun ekosistem kerja yang setara.</p>
+            </section>
+
+            <section class="skill-card">
+                <div class="skill-icon" aria-hidden="true">💻</div>
+                <h2>Instruktur TIK Disabilitas</h2>
+                <p>Pelatihan khusus komputer bicara (NVDA/JAWS) dan teknologi bantu lainnya untuk tunanetra agar mandiri dalam dunia pendidikan dan kerja.</p>
+            </section>
+
+            <section class="skill-card">
+                <div class="skill-icon" aria-hidden="true">💼</div>
+                <h2>Diskusi Ketenagakerjaan</h2>
+                <p>Konsultasi strategis bagi perusahaan dan instansi dalam merekrut, mengelola, dan membangun hubungan kerja yang harmonis dengan pegawai disabilitas.</p>
+            </section>
+
+            <section class="skill-card">
+                <div class="skill-icon" aria-hidden="true">🎓</div>
+                <h2>Diskusi Pendidikan</h2>
+                <p>Meningkatkan motivasi diri bagi siswa/keluarga disabilitas, serta memberikan masukan strategis bagi sekolah untuk membangun lingkungan belajar yang inklusif.</p>
+            </section>
+
+            <section class="skill-card">
+                <div class="skill-icon" aria-hidden="true">🌐</div>
+                <h2>Diskusi Literasi Digital</h2>
+                <p>Memberikan pemahaman tentang pentingnya akses informasi digital bagi semua kalangan, termasuk optimalisasi perangkat teknologi untuk mobilitas sosial.</p>
+            </section>
+
+        </div>
+
+        <section class="cta-box">
+            <h2>Tertarik Berkolaborasi?</h2>
+            <p>Mari diskusikan bagaimana saya bisa membantu instansi, komunitas, atau proyek Anda menjadi lebih inklusif.</p>
+            <a href="contact.html" class="btn-contact">Hubungi Saya Sekarang</a>
         </section>
     </main>
-    <footer><p>📊 Total Pengunjung: 1,250 | &copy; 2026 Alfian Andhika Yudhistira</p></footer>
+
+    <footer role="contentinfo">
+        <div class="footer-links">
+            <a href="accessibility.html">Aksesibilitas</a> | 
+            <a href="privacy.html">Privasi</a> | 
+            <a href="terms.html">Ketentuan</a>
+        </div>
+        <p>&copy; 2026 Alfian Andhika Yudhistira</p>
+    </footer>
+
+    <script>
+        function toggleA11yMenu() { document.getElementById('a11y-menu').classList.toggle('active'); }
+        function ubahFont(u) { document.getElementById('bodi').style.fontSize = (u * 1.2) + 'rem'; }
+        function gantiKontras() { document.body.classList.toggle('high-contrast'); }
+    </script>
 </body>
 </html>
