@@ -12,12 +12,17 @@
         nav { background: #004d40; position: sticky; top: 0; z-index: 999; padding: 10px 0; text-align: center; }
         nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; font-size: 0.9rem; }
         main { background: white; padding: 40px; box-shadow: 0 0 20px rgba(0,0,0,0.1); }
-        section { margin-bottom: 50px; }
-        h2 { color: #004d40; border-left: 8px solid #004d40; padding-left: 15px; }
+        section { margin-bottom: 50px; scroll-margin-top: 80px; }
+        h2 { color: #004d40; border-left: 8px solid #004d40; padding-left: 15px; margin-bottom: 20px; }
         .hero-text { font-style: italic; background: #e0f2f1; padding: 25px; border-radius: 10px; border-left: 5px solid #00695c; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .card { background: #f9f9f9; padding: 20px; border: 1px solid #ddd; border-radius: 8px; }
         .btn { display: inline-block; background: #004d40; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold; margin-top: 10px; }
         footer { background: #222; color: white; text-align: center; padding: 30px; margin-top: 40px; }
         .footer-links a { color: #e0f2f1; margin: 0 10px; text-decoration: none; font-size: 0.8rem; }
+        .media-list { list-style: none; padding: 0; }
+        .media-list li { margin-bottom: 12px; border-bottom: 1px solid #eee; padding-bottom: 8px; }
+        .media-list a { color: #004d40; text-decoration: none; font-weight: bold; }
     </style>
 </head>
 <body>
@@ -26,36 +31,73 @@
     </div>
     <header>
         <h1>Alfian Andhika Yudhistira, M.KP.</h1>
-        <p>Penelaah Teknis Kebijakan & Konsultan Aksesibilitas Digital</p>
+        <p><strong>Penelaah Teknis Kebijakan & Konsultan Aksesibilitas Digital</strong></p>
     </header>
-    <nav>
+
+    <nav role="navigation">
         <a href="index.html">Beranda</a>
         <a href="writing.html">Writing</a>
         <a href="skills.html">Keahlian</a>
         <a href="contact.html">Kontak</a>
     </nav>
+
     <main>
         <section id="home">
             <div class="hero-text">
-                <p>"Pesan tentang inklusi tak sekadar teori, melainkan melalui pengalaman agar bisa dinikmati semua orang."</p>
+                <p>"Banyak orang berbicara 'kita harus mulai inklusi', faktanya apa-apa masih dilakukan secara eksklusif. Pesan tentang inklusi tak sekadar teori, melainkan melalui pengalaman agar bisa dinikmati dan dipelajari semua orang."</p>
             </div>
-            <p>Saya fokus pada pembangunan SDM inklusif dan aksesibilitas digital.</p>
         </section>
-        <section id="skills-summary">
-            <h2>Ringkasan Keahlian</h2>
-            <p>Spesialisasi saya meliputi Audit Aksesibilitas Digital, Analisis Kebijakan Publik, dan Manajemen SDM Inklusif.</p>
-            <a href="skills.html" class="btn">Detail Keahlian Saya</a>
-        </section>
-        <section id="media-summary">
+
+        <section id="media">
             <h2>Saya di Media</h2>
-            <p>Telah diliput oleh Mojok, Detik, Kompas, dan UNAIR News.</p>
-            <a href="index.html#media-detail" class="btn">Lihat Semua Liputan</a>
+            <div class="grid">
+                <div class="card">
+                    <h3>Liputan Berita Terbaru</h3>
+                    <ul class="media-list">
+                        <li><a href="https://mojok.co/liputan/sosok/pembuktian-alfian-dianggap-sebelah-mata-karena-buta-kini-diangkat-pns-dan-raih-gelar-s2/" target="_blank">Mojok.co: Pembuktian Alfian Raih S2 dan Jadi PNS</a></li>
+                        <li><a href="https://unair.ac.id/kisah-alfian-wisudawan-tunanetra-pertama-unair/" target="_blank">UNAIR News: Kisah Wisudawan Tunanetra Pertama UNAIR</a></li>
+                        <li><a href="https://www.detik.com/edu/edutainment/d-7702336/kisah-alfian-wisudawan-tunanetra-pertama-unair-sukses-raih-gelar-s2" target="_blank">DetikEdu: Sukses Raih Gelar S2 di UNAIR</a></li>
+                        <li><a href="https://www.kompas.com/edu/read/2024/12/26/110638671/sosok-alfian-wisudawan-unair-yang-raih-gelar-s2" target="_blank">Kompas.com: Sosok Alfian Wisudawan Magister UNAIR</a></li>
+                        <li><a href="https://unair.ac.id/satukan-budaya-dan-regulasi-dukung-difabel-berdikari/" target="_blank">UNAIR: Dukung Difabel Berdikari melalui Budaya & Regulasi</a></li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>Media Sosial & Video</h3>
+                    <p>Ikuti aktivitas dan opini saya di:</p>
+                    <a href="https://tiktok.com/@Alfian_ay" class="btn" target="_blank">TikTok</a>
+                    <a href="https://instagram.com/Alfianandika" class="btn" target="_blank">Instagram</a>
+                    <a href="https://www.youtube.com/channel/UC6_34TWByyt-T3GRrIgq04g" class="btn" target="_blank">YouTube</a>
+                    <hr style="margin: 20px 0;">
+                    <p><strong>LinkedIn Profesional:</strong></p>
+                    <a href="https://www.linkedin.com/in/alfian-andhika-yudhistira-73786a12a" class="btn" target="_blank" style="background: #0077b5;">Profil LinkedIn</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills-summary">
+            <h2>Keahlian</h2>
+            <div class="card">
+                <p>Spesialisasi dalam <strong>Audit Aksesibilitas Digital</strong>, <strong>Analisis Kebijakan Publik</strong>, dan <strong>Manajemen SDM Inklusif</strong>.</p>
+                <a href="skills.html" class="btn">Detail Keahlian</a>
+            </div>
+        </section>
+
+        <section id="cta">
+            <div class="card" style="background: #e0f2f1; border: 2px solid #004d40; text-align: center;">
+                <h3>Butuh Narasumber atau Konsultansi?</h3>
+                <p>Mari berkolaborasi untuk menciptakan lingkungan yang lebih inklusif.</p>
+                <a href="contact.html" class="btn">Hubungi di Halaman Kontak</a>
+            </div>
         </section>
     </main>
+
     <footer>
         <p>&copy; 2026 Alfian Andhika Yudhistira</p>
         <div class="footer-links">
-            <a href="accessibility.html">Aksesibilitas</a> | <a href="privacy.html">Privasi</a> | <a href="terms.html">Ketentuan</a>
+            <a href="accessibility.html">Aksesibilitas</a> | 
+            <a href="privacy.html">Privasi</a> | 
+            <a href="terms.html">Ketentuan</a>
         </div>
     </footer>
 </body>
