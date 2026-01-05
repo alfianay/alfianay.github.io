@@ -1,12 +1,50 @@
 <!DOCTYPE html>
 <html lang="id">
-<head><meta charset="UTF-8"><title>Aksesibilitas - Alfianay</title></head>
-<body style="font-family: sans-serif; padding: 40px; line-height: 1.6;">
-    <h1>Deklarasi Aksesibilitas</h1>
-    <p>Kami berkomitmen agar web ini 100% aksesibel bagi pengguna pembaca layar sesuai standar WCAG 2.1.</p>
-    <a href="index.html">Kembali ke Beranda</a>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deklarasi Aksesibilitas - Alfianay</title>
+    <style>
+        body { font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.8; color: #333; max-width: 1000px; margin: 0 auto; background: #f4f4f4; padding: 0; }
+        .logo-container { text-align: center; padding: 20px; background: white; }
+        .logo { max-width: 120px; }
+        nav { background: #004d40; padding: 12px 0; text-align: center; }
+        nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
+        main { background: white; padding: 40px; box-shadow: 0 0 20px rgba(0,0,0,0.1); min-height: 400px; }
+        h1 { color: #004d40; border-bottom: 3px solid #004d40; padding-bottom: 10px; }
+        .newsletter-box { background: #004d40; color: white; padding: 30px; text-align: center; margin-top: 40px; border-radius: 10px 10px 0 0; }
+        .newsletter-box input { padding: 12px; width: 60%; max-width: 300px; border-radius: 5px; border: none; margin-bottom: 10px; font-size: 1rem; }
+        .btn-sub { background: #ffca28; color: #333; padding: 12px 25px; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; }
+        .stats-section { background: #e0f2f1; padding: 15px; text-align: center; font-weight: bold; color: #004d40; border-top: 1px solid #004d40; border-bottom: 1px solid #004d40; }
+        footer { background: #222; color: white; text-align: center; padding: 30px; border-radius: 0 0 10px 10px; }
+        .footer-links a { color: #e0f2f1; margin: 0 10px; text-decoration: none; font-size: 0.85rem; }
+    </style>
+</head>
+<body>
+    <div class="logo-container"><img src="Logo tanpa background.png" alt="Logo Alfianay" class="logo"></div>
+    <nav><a href="index.html">Beranda</a><a href="writing.html">Writing</a><a href="skills.html">Keahlian</a><a href="contact.html">Kontak</a></nav>
+    <main>
+        <h1>Deklarasi Aksesibilitas</h1>
+        <p>Saya berkomitmen penuh untuk memastikan website ini dapat diakses oleh semua orang tanpa terkecuali, termasuk pengguna teknologi bantu seperti pembaca layar (*Screen Reader*).</p>
+        <h2>Komitmen Saya:</h2>
+        <ul>
+            <li>Mengikuti standar **WCAG 2.1 Level AA**.</li>
+            <li>Memastikan kontras warna yang cukup untuk pengguna dengan gangguan penglihatan (*low vision*).</li>
+            <li>Menyediakan navigasi keyboard yang logis dan teks alternatif pada gambar.</li>
+        </ul>
+        <p>Jika Anda menemukan hambatan dalam mengakses konten saya, silakan hubungi saya langsung di halaman kontak.</p>
+    </main>
+    <section class="newsletter-box">
+        <h3>Newsletter Alfianay</h3>
+        <form action="https://formspree.io/f/alfianandikay@gmail.com" method="POST">
+            <input type="email" name="email" placeholder="Alamat Email" required aria-label="Masukkan Email">
+            <button type="submit" class="btn-sub">Subscribe</button>
+        </form>
+    </section>
+    <section class="stats-section"><p>📊 Total Pengunjung: 1,250</p></section>
+    <footer>
+        <div class="footer-links"><a href="accessibility.html">Aksesibilitas</a> | <a href="privacy.html">Privasi</a> | <a href="terms.html">Ketentuan</a></div>
+        <p>&copy; 2026 Alfian Andhika Yudhistira</p>
+    </footer>
 </body>
-    <div style="text-align: center; padding: 20px; background: white;">
-    <img src="Logo tanpa background.png" alt="Logo Alfianay" style="max-width: 120px;">
-</div>
 </html>
