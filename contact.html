@@ -22,6 +22,17 @@
 
         header { padding: 50px 20px; text-align: center; background: var(--hero-bg); border-bottom: 5px solid var(--green-aaa); }
 
+        /* KOTAK FOTO KONTAK */
+        .contact-photo-container { text-align: center; margin-bottom: 20px; }
+        .contact-photo { 
+            width: 150px; 
+            height: 150px; 
+            border-radius: 50%; 
+            object-fit: cover; 
+            border: 4px solid var(--green-aaa);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
         main { padding: 40px 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
 
         .contact-info, .contact-form { background: var(--card-bg); border: 2px solid var(--green-aaa); padding: 30px; border-radius: 15px; }
@@ -68,6 +79,9 @@
     </nav>
 
     <header>
+        <div class="contact-photo-container">
+            <img src="Alfian Januari 2025.JPG" alt="Alfian Andhika Yudhistira mengenakan kemeja biru kotak-kotak" class="contact-photo">
+        </div>
         <h1>Kontak & Kolaborasi</h1>
         <p>Silakan hubungi saya untuk konsultasi, kerja sama proyek, atau diskusi seputar inklusi.</p>
     </header>
@@ -140,7 +154,6 @@
         function ubahFont(u) { document.getElementById('bodi').style.fontSize = (u * 1.2) + 'rem'; }
         function gantiKontras() { document.body.classList.toggle('high-contrast'); }
 
-        // Sederhana: Simulasi Pengiriman
         document.getElementById('direct-contact').onsubmit = function(e) {
             e.preventDefault();
             document.getElementById('form-status').innerText = "Pesan terkirim! Saya akan menghubungi Anda segera.";
