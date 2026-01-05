@@ -14,12 +14,9 @@
         h2 { color: #004d40; border-left: 8px solid #004d40; padding-left: 15px; margin-bottom: 20px; }
         .card { background: #f9f9f9; padding: 20px; border: 1px solid #ddd; border-radius: 8px; margin-bottom: 20px; text-align: center; }
         .btn-wa { display: inline-block; background: #25d366; color: white; padding: 12px 25px; text-decoration: none; border-radius: 5px; font-weight: bold; margin-top: 10px; }
-        
-        /* NEWSLETTER BOX - MUNCUL DI SEMUA HALAMAN */
         .newsletter-box { background: #004d40; color: white; padding: 30px; text-align: center; margin-top: 40px; }
         .newsletter-box input[type="email"] { padding: 12px; width: 60%; max-width: 300px; border-radius: 5px; border: none; margin-bottom: 10px; font-size: 1rem; }
         .btn-sub { background: #ffca28; color: #333; padding: 12px 25px; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; font-size: 1rem; }
-
         .stats-section { background: #e0f2f1; padding: 20px; text-align: center; font-weight: bold; color: #004d40; border-top: 2px solid #004d40; }
         footer { background: #222; color: white; text-align: center; padding: 30px; }
         .footer-links a { color: #e0f2f1; margin: 0 10px; text-decoration: none; font-size: 0.85rem; }
@@ -28,34 +25,29 @@
 <body>
     <div class="logo-container"><img src="Logo tanpa background.png" alt="Logo Alfianay" class="logo"></div>
     <nav><a href="index.html">Beranda</a><a href="writing.html">Writing</a><a href="skills.html">Keahlian</a><a href="contact.html">Kontak</a></nav>
-    
     <main>
         <h2>Undang Saya</h2>
         <div class="card">
-            <p>Klik tombol di bawah untuk mengundang saya sebagai narasumber atau konsultan ahli via WhatsApp:</p>
-            <a href="https://wa.me/6282334737135?text=Halo%20Alfian,%20saya%20ingin%20mengundang%20Anda" class="btn-wa">Undang via WhatsApp Sekarang</a>
+            <p>Butuh Narasumber Ahli atau Konsultan Aksesibilitas?</p>
+            <a href="https://wa.me/6282334737135?text=Halo%20Alfian,%20saya%20tertarik%20mengundang%20Anda" class="btn-wa">Undang via WhatsApp Sekarang</a>
         </div>
-
-        <h2>Liputan Media</h2>
+        <h2>Saya di Media</h2>
         <div class="card" style="text-align: left;">
-            <ul>
-                <li><a href="https://mojok.co/liputan/sosok/pembuktian-alfian-dianggap-sebelah-mata-karena-buta-kini-diangkat-pns-dan-raih-gelar-s2/">Mojok.co: Pembuktian Alfian Raih S2 & PNS</a></li>
-                <li><a href="https://www.detik.com/edu/edutainment/d-7702336/kisah-alfian-wisudawan-tunanetra-pertama-unair-sukses-raih-gelar-s2">Detik: Wisudawan Pertama S2 UNAIR</a></li>
+            <ul style="list-style: none; padding: 0;">
+                <li style="margin-bottom:10px;"><strong>Mojok:</strong> <a href="https://mojok.co/liputan/sosok/pembuktian-alfian-dianggap-sebelah-mata-karena-buta-kini-diangkat-pns-dan-raih-gelar-s2/">Pembuktian Alfian Raih S2 & PNS</a></li>
+                <li><strong>Detik:</strong> <a href="https://www.detik.com/edu/edutainment/d-7702336/kisah-alfian-wisudawan-tunanetra-pertama-unair-sukses-raih-gelar-s2">Wisudawan Tunanetra Pertama UNAIR</a></li>
             </ul>
         </div>
     </main>
-
     <section class="newsletter-box">
         <h3>Newsletter Alfianay</h3>
-        <p>Berlangganan untuk mendapatkan update tulisan dan informasi inklusi terbaru.</p>
-        <form action="#">
-            <input type="email" placeholder="Masukkan Alamat Email Anda" required aria-label="Email Newsletter">
-            <button type="submit" class="btn-sub">Subscribe Sekarang</button>
+        <p>Berlangganan untuk update tulisan terbaru di email Anda.</p>
+        <form action="https://formspree.io/f/alfianandikay@gmail.com" method="POST">
+            <input type="email" name="email" placeholder="Alamat Email Anda" required aria-label="Email Newsletter">
+            <button type="submit" class="btn-sub">Daftar Sekarang</button>
         </form>
     </section>
-
     <section class="stats-section"><p>📊 Hari Ini: 15 | 📈 Total Pengunjung: 1,250 | 📖 Total Pembaca: 860</p></section>
-    
     <footer>
         <p>&copy; 2026 Alfian Andhika Yudhistira</p>
         <div class="footer-links"><a href="accessibility.html">Aksesibilitas</a> | <a href="privacy.html">Privasi</a> | <a href="terms.html">Ketentuan</a></div>
