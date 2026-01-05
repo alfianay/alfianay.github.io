@@ -27,53 +27,42 @@
             background: var(--bg-body); font-size: 1.2rem; transition: 0.3s;
         }
 
-        /* 1. FLOATING ACCESSIBILITY ICON */
+        /* FLOATING ICON ♿ */
         .a11y-toggle-btn {
             position: fixed; bottom: 20px; right: 20px;
             background: var(--green-aaa); color: var(--accent);
-            border: 2px solid #000; width: 65px; height: 65px;
+            border: 3px solid #000; width: 65px; height: 65px;
             border-radius: 50%; cursor: pointer; z-index: 1002;
-            font-size: 2rem; display: flex; align-items: center; justify-content: center;
+            font-size: 2.2rem; display: flex; align-items: center; justify-content: center;
             box-shadow: 0 4px 15px rgba(0,0,0,0.4);
         }
 
-        /* 2. TOOLBAR (HIDDEN BY DEFAULT) */
         .a11y-toolbar { 
-            display: none; 
-            background: #f1f5f9; padding: 15px; text-align: center; 
-            border-bottom: 4px solid var(--green-aaa); 
-            position: sticky; top: 0; z-index: 1001;
+            display: none; background: #f1f5f9; padding: 15px; text-align: center; 
+            border-bottom: 4px solid var(--green-aaa); position: sticky; top: 0; z-index: 1001;
         }
         .a11y-toolbar.active { display: block; }
+        .a11y-toolbar button { background: var(--green-aaa); color: white; border: 2px solid #000; padding: 10px 18px; margin: 5px; cursor: pointer; font-weight: bold; border-radius: 5px; }
 
-        .a11y-toolbar button { 
-            background: var(--green-aaa); color: white; border: 2px solid #000; 
-            padding: 10px 18px; margin: 5px; cursor: pointer; font-weight: bold; border-radius: 5px; 
-        }
-
-        /* SKIP LINKS */
         .skip-links a {
             position: absolute; top: -100px; left: 50%; transform: translateX(-50%);
-            background: var(--accent); color: #000; padding: 15px; z-index: 1001;
-            font-weight: bold; border: 2px solid #000; text-decoration: none;
+            background: var(--accent); color: #000; padding: 15px; z-index: 1001; font-weight: bold; border: 2px solid #000;
         }
         .skip-links a:focus { top: 10px; }
 
         header { padding: 40px 20px; text-align: center; border-bottom: 10px solid var(--green-aaa); }
-        .logo { width: 180px; }
-        
         nav { background: var(--green-aaa); padding: 15px 0; text-align: center; }
         nav ul { list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
         nav a { color: #ffffff; font-weight: bold; text-decoration: underline; }
 
         main { padding: 40px 20px; }
         .hero-box { background: var(--hero-bg); padding: 40px; border-radius: 20px; border: 3px solid var(--green-aaa); margin-bottom: 50px; }
-        
-        /* MEDIA SECTION (CORRECTED) */
+        .quote { font-size: 1.4rem; font-weight: 600; font-style: italic; color: var(--green-aaa); }
+
         .card { border: 2px solid var(--green-aaa); padding: 25px; border-radius: 12px; margin-bottom: 30px; background: var(--card-bg); }
         .media-list { padding-left: 20px; list-style-type: square; }
         .media-list li { margin-bottom: 15px; border-bottom: 1px solid #ddd; padding-bottom: 5px; }
-        .media-list a { color: inherit; font-weight: bold; text-decoration: underline; }
+        .media-list a { color: inherit; font-weight: bold; }
 
         .newsletter-section { background: var(--green-aaa); color: #fff; padding: 60px 30px; border-radius: 20px; text-align: center; }
         .form-group { max-width: 500px; margin: 0 auto 20px; text-align: left; }
@@ -81,7 +70,6 @@
         .btn-sub { background: var(--accent); color: #000; padding: 15px 50px; border-radius: 8px; font-weight: 900; cursor: pointer; border: 2px solid #000; }
 
         footer { background: #111; color: #fff; padding: 50px 20px; text-align: center; margin-top: 50px; }
-        .footer-links a { color: #fff; margin: 0 10px; }
     </style>
 </head>
 <body id="bodi">
@@ -91,19 +79,17 @@
         <a href="#newsletter-target">Skip ke Newsletter</a>
     </div>
 
-    <button class="a11y-toggle-btn" onclick="toggleA11yMenu()" aria-label="Buka Menu Aksesibilitas">
-        ♿
-    </button>
+    <button class="a11y-toggle-btn" onclick="toggleA11yMenu()" aria-label="Menu Aksesibilitas">♿</button>
 
     <div id="a11y-menu" class="a11y-toolbar">
-        <button onclick="ubahFont(1.2)">Teks Lebih Besar</button>
+        <button onclick="ubahFont(1.2)">Teks Besar</button>
         <button onclick="ubahFont(1.0)">Teks Normal</button>
         <button onclick="gantiKontras()">Mode Kontras Tinggi</button>
         <button onclick="toggleA11yMenu()" style="background:#cc0000;">Tutup</button>
     </div>
 
     <header role="banner">
-        <img src="Logo tanpa background.png" alt="Logo Alfianay" class="logo">
+        <img src="Logo tanpa background.png" alt="Logo Alfianay" style="width:180px;">
         <h1>Alfian Andhika Yudhistira, M.KP.</h1>
         <p><strong>Penelaah Teknis Kebijakan & Konsultan Aksesibilitas Digital</strong></p>
     </header>
@@ -119,36 +105,30 @@
 
     <main id="main-content" role="main">
         <section class="hero-box">
-            <p style="font-size: 1.4rem; font-weight: 600; font-style: italic; color: var(--green-aaa);">
-                "Pesan tentang inklusi tak sekadar teori, melainkan melalui pengalaman agar bisa dinikmati dan dipelajari semua orang."
-            </p>
-            <p style="margin-top: 25px;">Saya adalah Alfian, alumnus Magister Kebijakan Publik dan S1 Antropologi Universitas Airlangga. Fokus pada pembangunan SDM inklusif dan lingkungan digital yang akses untuk semua.</p>
+            <p class="quote">"Banyak orang berbicara 'kita harus mulai inklusi', faktanya apa-apa masih dilakukan secara eksklusif. Pesan tentang inklusi tak sekadar teori, melainkan melalui pengalaman agar bisa dinikmati dan dipelajari semua orang."</p>
+            <p style="margin-top: 25px;">Halo, saya <strong>Alfian</strong>. Saya adalah alumnus Magister Kebijakan Publik dan S1 Antropologi Universitas Airlangga. Perjalanan hidup dan akademik saya dedikasikan untuk pembangunan sumber daya manusia yang inklusif, kepemimpinan disabilitas, serta memastikan lingkungan digital dapat diakses secara setara oleh semua individu tanpa hambatan.</p>
         </section>
 
         <section aria-labelledby="judul-media">
-            <h2 id="judul-media" style="color: var(--green-aaa)">Liputan Media Nasional</h2>
+            <h2 id="judul-media" style="color: var(--green-aaa)">Liputan & Publikasi Media</h2>
             <div class="card">
                 <ul class="media-list">
-                    <li><strong>UNAIR:</strong> <a href="https://unair.ac.id/kisah-inspiratif-alfian-wisudawan-tunanetra-pertama-magister-unair/" target="_blank">Kisah Alfian Wisudawan Tunanetra Pertama Magister UNAIR</a></li>
-                    <li><strong>Mojok:</strong> <a href="https://mojok.co/liputan/sosok/pembuktian-alfian-dianggap-sebelah-mata-karena-buta-kini-diangkat-pns-dan-raih-gelar-s2/" target="_blank">Pembuktian Alfian Raih S2 & PNS - Liputan Sosok Mojok</a></li>
-                    <li><strong>DetikEdu:</strong> <a href="https://www.detik.com/edu/edutainment/d-7702336/kisah-alfian-wisudawan-tunanetra-pertama-unair-sukses-raih-gelar-s2" target="_blank">Kisah Alfian Wisudawan Tunanetra Pertama S2 - Detik.com</a></li>
+                    <li><strong>tvOne (Video 1):</strong> <a href="https://www.youtube.com/watch?v=D-v7WfV0Rnc" target="_blank">Kisah Alfian: Wisudawan Tunanetra Pertama Magister UNAIR - tvOne</a></li>
+                    <li><strong>tvOne (Video 2):</strong> <a href="https://www.youtube.com/watch?v=FOfR0-i7pWk" target="_blank">Inspirasi Alfian: Menembus Batas dalam Keterbatasan - tvOne</a></li>
+                    <li><strong>Mojok.co:</strong> <a href="https://mojok.co/liputan/sosok/pembuktian-alfian-dianggap-sebelah-mata-karena-buta-kini-diangkat-pns-dan-raih-gelar-s2/" target="_blank">Pembuktian Alfian: Dianggap Sebelah Mata, Kini PNS & Raih Gelar S2</a></li>
+                    <li><strong>DetikEdu:</strong> <a href="https://www.detik.com/edu/edutainment/d-7702336/kisah-alfian-wisudawan-tunanetra-pertama-unair-sukses-raih-gelar-s2" target="_blank">Kisah Alfian Wisudawan Tunanetra Pertama S2 UNAIR - Detik.com</a></li>
                     <li><strong>Kompas:</strong> <a href="https://www.kompas.com/edu/read/2024/12/26/110638671/sosok-alfian-wisudawan-unair-yang-raih-gelar-s2" target="_blank">Sosok Alfian Wisudawan UNAIR Raih Gelar S2 - Kompas.com</a></li>
+                    <li><strong>Official UNAIR:</strong> <a href="https://unair.ac.id/kisah-inspiratif-alfian-wisudawan-tunanetra-pertama-magister-unair/" target="_blank">Kisah Inspiratif Alfian Wisudawan Tunanetra Pertama Magister UNAIR</a></li>
                 </ul>
             </div>
         </section>
 
         <section class="newsletter-section" id="newsletter-target">
-            <h2>Berlangganan Newsletter</h2>
-            <p>Dapatkan update artikel aksesibilitas langsung di email Anda.</p>
+            <h2>Langganan Newsletter</h2>
+            <p>Dapatkan update artikel aksesibilitas dan kebijakan inklusi terbaru.</p>
             <form id="subs-form">
-                <div class="form-group">
-                    <label for="user-name" style="color:inherit">Nama Lengkap:</label>
-                    <input type="text" id="user-name" name="nama" autocomplete="name" required placeholder="Nama Anda">
-                </div>
-                <div class="form-group">
-                    <label for="user-email" style="color:inherit">Alamat Email:</label>
-                    <input type="email" id="user-email" name="email" autocomplete="email" required placeholder="nama@email.com">
-                </div>
+                <div class="form-group"><label for="u-name" style="color:inherit">Nama:</label><input type="text" id="u-name" name="nama" required placeholder="Nama Lengkap"></div>
+                <div class="form-group"><label for="u-email" style="color:inherit">Email:</label><input type="email" id="u-email" name="email" required placeholder="email@contoh.com"></div>
                 <button type="submit" class="btn-sub">Daftar Sekarang</button>
             </form>
             <div id="status" aria-live="polite" style="margin-top:20px; font-weight:bold;"></div>
@@ -156,12 +136,15 @@
     </main>
 
     <footer>
-        <div class="footer-links">
-            <a href="accessibility.html">Aksesibilitas</a> | <a href="privacy.html">Privasi</a> | <a href="terms.html">Ketentuan</a>
-        </div>
-        <p>&copy; 2026 Alfian Andhika Yudhistira</p>
+        <div class="footer-links"><a href="accessibility.html" style="color:#fff">Aksesibilitas</a> | <a href="privacy.html" style="color:#fff">Privasi</a> | <a href="terms.html" style="color:#fff">Ketentuan</a></div>
+        <p style="margin-top: 20px;">&copy; 2026 Alfian Andhika Yudhistira. All Rights Reserved.</p>
     </footer>
 
     <script>
-        function toggleA11yMenu() {
-            document.getElementById('a11y-menu').classList.toggle('active');
+        function toggleA11yMenu() { document.getElementById('a11y-menu').classList.toggle('active'); }
+        function ubahFont(u) { document.getElementById('bodi').style.fontSize = (u * 1.2) + 'rem'; }
+        function gantiKontras() { document.body.classList.toggle('high-contrast'); }
+        document.getElementById('subs-form').onsubmit = function(e) { e.preventDefault(); document.getElementById('status').innerHTML = "Terima kasih, pendaftaran diproses!"; };
+    </script>
+</body>
+</html>
