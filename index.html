@@ -10,78 +10,76 @@
         .logo { max-width: 150px; }
         header { background: white; padding: 20px; text-align: center; border-bottom: 5px solid #004d40; }
         nav { background: #004d40; position: sticky; top: 0; z-index: 999; padding: 10px 0; text-align: center; }
-        nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; font-size: 0.9rem; }
+        nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
         main { background: white; padding: 40px; box-shadow: 0 0 20px rgba(0,0,0,0.1); }
-        section { margin-bottom: 50px; scroll-margin-top: 80px; }
         h2 { color: #004d40; border-left: 8px solid #004d40; padding-left: 15px; margin-bottom: 20px; }
-        .hero-text { font-style: italic; background: #e0f2f1; padding: 25px; border-radius: 10px; border-left: 5px solid #00695c; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-        .card { background: #f9f9f9; padding: 20px; border: 1px solid #ddd; border-radius: 8px; }
-        .btn { display: inline-block; background: #004d40; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold; margin-top: 10px; }
-        .media-list { list-style: none; padding: 0; }
-        .media-list li { margin-bottom: 12px; border-bottom: 1px solid #eee; padding-bottom: 8px; }
-        .media-list a { color: #004d40; text-decoration: none; font-weight: bold; }
-        .stats-section { background: #e0f2f1; padding: 25px; text-align: center; border-top: 3px solid #004d40; }
+        .card { background: #f9f9f9; padding: 20px; border: 1px solid #ddd; border-radius: 8px; margin-bottom: 20px; }
+        .btn { display: inline-block; background: #004d40; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold; margin-top: 10px; border: none; cursor: pointer; }
+        .btn-wa { background: #25d366; }
+        
+        /* FOOTER & SUBSCRIBE SECTION */
+        .subscribe-section { background: #e0f2f1; padding: 30px; text-align: center; border-top: 5px solid #004d40; }
+        .stats-box { font-weight: bold; color: #004d40; margin-bottom: 20px; font-size: 1.1rem; }
         footer { background: #222; color: white; text-align: center; padding: 30px; }
-        .footer-links a { color: #e0f2f1; margin: 0 10px; text-decoration: none; font-size: 0.8rem; }
+        .footer-links a { color: #e0f2f1; margin: 0 10px; text-decoration: none; font-size: 0.85rem; }
     </style>
 </head>
 <body>
     <div class="logo-container">
         <img src="Logo tanpa background.png" alt="Logo Alfianay" class="logo">
     </div>
+    
     <header>
         <h1>Alfian Andhika Yudhistira, M.KP.</h1>
         <p><strong>Penelaah Teknis Kebijakan & Konsultan Aksesibilitas Digital</strong></p>
     </header>
+
     <nav>
         <a href="index.html">Beranda</a>
         <a href="writing.html">Writing</a>
         <a href="skills.html">Keahlian</a>
         <a href="contact.html">Kontak</a>
     </nav>
-    <main>
-        <section id="home">
-            <div class="hero-text">
-                <p>"Banyak orang berbicara 'kita harus mulai inklusi', faktanya apa-apa masih dilakukan secara eksklusif. Pesan tentang inklusi tak sekadar teori, melainkan melalui pengalaman agar bisa dinikmati dan dipelajari semua orang."</p>
+
+    <main id="main-content">
+        <section id="media">
+            <h2>Saya di Media</h2>
+            <div class="card">
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 10px;"><strong>Mojok:</strong> <a href="https://mojok.co/liputan/sosok/pembuktian-alfian-dianggap-sebelah-mata-karena-buta-kini-diangkat-pns-dan-raih-gelar-s2/">Pembuktian Alfian Raih S2 dan PNS</a></li>
+                    <li style="margin-bottom: 10px;"><strong>Detik:</strong> <a href="https://www.detik.com/edu/edutainment/d-7702336/kisah-alfian-wisudawan-tunanetra-pertama-unair-sukses-raih-gelar-s2">Wisudawan Tunanetra Pertama UNAIR</a></li>
+                    <li style="margin-bottom: 10px;"><strong>Kompas:</strong> <a href="https://www.kompas.com/edu/read/2024/12/26/110638671/sosok-alfian-wisudawan-unair-yang-raih-gelar-s2">Sosok Alfian Wisudawan Magister</a></li>
+                </ul>
             </div>
         </section>
 
-        <section id="media">
-            <h2>Saya di Media</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>Liputan Berita</h3>
-                    <ul class="media-list">
-                        <li><a href="https://mojok.co/liputan/sosok/pembuktian-alfian-dianggap-sebelah-mata-karena-buta-kini-diangkat-pns-dan-raih-gelar-s2/" target="_blank">Mojok.co: Pembuktian Alfian Raih S2 dan PNS</a></li>
-                        <li><a href="https://unair.ac.id/kisah-alfian-wisudawan-tunanetra-pertama-unair/" target="_blank">UNAIR News: Wisudawan Tunanetra Pertama UNAIR</a></li>
-                        <li><a href="https://www.detik.com/edu/edutainment/d-7702336/kisah-alfian-wisudawan-tunanetra-pertama-unair-sukses-raih-gelar-s2" target="_blank">DetikEdu: Sukses Raih Gelar S2 di UNAIR</a></li>
-                        <li><a href="https://www.kompas.com/edu/read/2024/12/26/110638671/sosok-alfian-wisudawan-unair-yang-raih-gelar-s2" target="_blank">Kompas.com: Sosok Alfian Wisudawan Magister</a></li>
-                        <li><a href="https://unair.ac.id/satukan-budaya-dan-regulasi-dukung-difabel-berdikari/" target="_blank">UNAIR: Dukung Difabel melalui Budaya & Regulasi</a></li>
-                    </ul>
-                </div>
-                <div class="card">
-                    <h3>Ringkasan Keahlian</h3>
-                    <p>Audit Aksesibilitas Digital, Analisis Kebijakan Publik, dan Manajemen SDM Inklusif.</p>
-                    <a href="skills.html" class="btn">Lihat Detail Keahlian</a>
-                </div>
+        <section id="undang">
+            <h2>Undang Saya</h2>
+            <div class="card" style="text-align: center;">
+                <p>Butuh Narasumber Ahli atau Konsultan Aksesibilitas Digital?</p>
+                <a href="https://wa.me/6282334737135?text=Halo%20Alfian,%20saya%20tertarik%20mengundang%20Anda" class="btn btn-wa">Hubungi via WhatsApp (Fast Response)</a>
             </div>
         </section>
     </main>
 
-    <section class="stats-section">
-        <h3>Statistik & Langganan</h3>
-        <p>📊 Hari Ini: 12 | 📈 Total: 1,240 | 📖 Pembaca: 850</p>
-        <p><strong>Ikuti Saya:</strong></p>
-        <a href="https://www.youtube.com/channel/UC6_34TWByyt-T3GRrIgq04g" target="_blank" style="color:red; font-weight:bold; margin:0 10px;">YouTube</a>
-        <a href="https://tiktok.com/@Alfian_ay" target="_blank" style="color:black; font-weight:bold; margin:0 10px;">TikTok</a>
-        <a href="https://instagram.com/Alfianandika" target="_blank" style="color:#E1306C; font-weight:bold; margin:0 10px;">Instagram</a>
-    </section>
+    <div class="subscribe-section">
+        <h3>Mari Berlangganan & Ikuti Saya</h3>
+        <div class="stats-box">
+            📊 Pengunjung Hari Ini: 15 | 📈 Total Pengunjung: 1,250 | 📖 Pembaca: 860
+        </div>
+        <p>Ikuti update terbaru melalui media sosial:</p>
+        <a href="https://www.youtube.com/channel/UC6_34TWByyt-T3GRrIgq04g" target="_blank" class="btn" style="background: red;">YouTube</a>
+        <a href="https://tiktok.com/@Alfian_ay" target="_blank" class="btn" style="background: black;">TikTok</a>
+        <a href="https://instagram.com/Alfianandika" target="_blank" class="btn" style="background: #E1306C;">Instagram</a>
+        <a href="https://www.linkedin.com/in/alfian-andhika-yudhistira-73786a12a" target="_blank" class="btn" style="background: #0077b5;">LinkedIn</a>
+    </div>
 
     <footer>
-        <p>&copy; 2026 Alfian Andhika Yudhistira</p>
+        <p>&copy; 2026 Alfian Andhika Yudhistira. All Rights Reserved.</p>
         <div class="footer-links">
-            <a href="accessibility.html">Aksesibilitas</a> | <a href="privacy.html">Privasi</a> | <a href="terms.html">Ketentuan</a>
+            <a href="accessibility.html">Aksesibilitas</a> | 
+            <a href="privacy.html">Privasi</a> | 
+            <a href="terms.html">Ketentuan</a>
         </div>
     </footer>
 </body>
