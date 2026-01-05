@@ -3,88 +3,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kontak - Alfian Andhika Yudhistira</title>
+    <title>Kontak | Alfian Andhika Yudhistira</title>
     <style>
-        body { font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.8; color: #333; max-width: 1000px; margin: 0 auto; background: #f4f4f4; padding: 0; }
-        .logo-container { text-align: center; padding: 20px; background: white; }
-        .logo { max-width: 120px; }
-        nav { background: #004d40; position: sticky; top: 0; z-index: 999; padding: 12px 0; text-align: center; }
-        nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
-        main { background: white; padding: 40px; box-shadow: 0 0 20px rgba(0,0,0,0.1); min-height: 400px; }
-        h1 { color: #004d40; border-bottom: 3px solid #004d40; padding-bottom: 10px; }
-        .card { background: #f9f9f9; padding: 20px; border-radius: 8px; border: 1px solid #ddd; margin-bottom: 25px; text-align: center; }
-        .btn { display: inline-block; padding: 12px 25px; text-decoration: none; border-radius: 5px; font-weight: bold; margin: 10px; color: white; min-width: 160px; }
-        .btn-wa { background: #25d366; }
-        .btn-li { background: #0077b5; }
-        .btn-yt { background: #ff0000; }
-        .btn-tk { background: #000000; }
-        .btn-ig { background: #e1306c; }
+        :root { 
+            --green-aaa: #002d26; --accent: #ffea00; --bg-body: #ffffff;
+            --text-color: #121212; --hero-bg: #f0fdf4; --card-bg: #ffffff;
+        }
+        body.high-contrast {
+            --green-aaa: #ffea00; --bg-body: #000000; --text-color: #ffffff;
+            --accent: #ffffff; --card-bg: #111111;
+            background-color: #000 !important; color: #fff !important;
+        }
+        body { font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.8; color: var(--text-color); max-width: 1050px; margin: 0 auto; background: var(--bg-body); font-size: 1.2rem; transition: 0.3s; }
         
-        /* FOOTER AREA (NEWSLETTER + STATS + LEGAL) */
-        .footer-container { margin-top: 40px; }
-        .newsletter-box { background: #004d40; color: white; padding: 30px; text-align: center; border-radius: 10px 10px 0 0; }
-        .newsletter-box input { padding: 12px; width: 60%; max-width: 300px; border-radius: 5px; border: none; margin-bottom: 10px; font-size: 1rem; }
-        .btn-sub { background: #ffca28; color: #333; padding: 12px 25px; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; }
-        .stats-section { background: #e0f2f1; padding: 15px; text-align: center; font-weight: bold; color: #004d40; border-top: 1px solid #004d40; border-bottom: 1px solid #004d40; }
-        footer { background: #222; color: white; text-align: center; padding: 30px; border-radius: 0 0 10px 10px; }
-        .footer-links { margin-bottom: 10px; }
-        .footer-links a { color: #e0f2f1; margin: 0 10px; text-decoration: none; font-size: 0.85rem; }
+        nav { background: var(--green-aaa); padding: 15px 0; text-align: center; position: sticky; top: 0; z-index: 100; border-bottom: 4px solid var(--accent); }
+        nav a { color: #ffffff; margin: 0 15px; font-weight: bold; text-decoration: none; border-bottom: 2px solid transparent; }
+        nav a:hover { border-bottom: 2px solid var(--accent); }
+
+        header { padding: 50px 20px; text-align: center; background: var(--hero-bg); border-bottom: 5px solid var(--green-aaa); }
+
+        main { padding: 40px 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
+
+        .contact-info, .contact-form { background: var(--card-bg); border: 2px solid var(--green-aaa); padding: 30px; border-radius: 15px; }
+
+        .contact-list { list-style: none; padding: 0; }
+        .contact-list li { margin-bottom: 20px; display: flex; align-items: flex-start; gap: 15px; }
+        .contact-list a { color: #0056b3; font-weight: bold; text-decoration: underline; }
+        body.high-contrast .contact-list a { color: var(--accent); }
+
+        /* FORM STYLE */
+        .form-group { margin-bottom: 20px; }
+        label { display: block; font-weight: bold; margin-bottom: 5px; }
+        input, textarea { width: 100%; padding: 12px; border: 2px solid #ccc; border-radius: 8px; font-size: 1.1rem; box-sizing: border-box; }
+        input:focus, textarea:focus { border-color: var(--green-aaa); outline: none; }
+        
+        .btn-send { background: var(--green-aaa); color: white; padding: 15px 30px; border: 2px solid #000; border-radius: 8px; font-weight: 900; cursor: pointer; width: 100%; font-size: 1.2rem; }
+        .btn-send:hover { background: #004d40; color: var(--accent); }
+
+        footer { background: #111; color: #fff; padding: 40px; text-align: center; margin-top: 50px; }
+        .footer-links a { color: #fff; margin: 0 10px; text-decoration: underline; font-size: 0.9rem; }
+
+        /* A11Y TOOLBAR */
+        .a11y-toggle-btn { position: fixed; bottom: 20px; right: 20px; background: var(--green-aaa); color: var(--accent); border: 3px solid #000; width: 65px; height: 65px; border-radius: 50%; cursor: pointer; z-index: 1002; font-size: 2.2rem; display: flex; align-items: center; justify-content: center; }
+        .a11y-toolbar { display: none; background: #f1f5f9; padding: 15px; text-align: center; border-bottom: 4px solid var(--green-aaa); position: sticky; top: 60px; z-index: 101; }
+        .a11y-toolbar.active { display: block; }
+        .a11y-toolbar button { background: var(--green-aaa); color: white; border: 2px solid #000; padding: 10px 18px; margin: 5px; cursor: pointer; font-weight: bold; border-radius: 5px; }
     </style>
 </head>
-<body>
-    <div class="logo-container">
-        <img src="Logo tanpa background.png" alt="Logo Alfianay" class="logo">
+<body id="bodi">
+
+    <button class="a11y-toggle-btn" onclick="toggleA11yMenu()" aria-label="Menu Aksesibilitas">♿</button>
+    <div id="a11y-menu" class="a11y-toolbar">
+        <button onclick="ubahFont(1.2)">Teks Besar</button>
+        <button onclick="ubahFont(1.0)">Teks Normal</button>
+        <button onclick="gantiKontras()">Mode Kontras Tinggi</button>
+        <button onclick="toggleA11yMenu()" style="background:#cc0000;">Tutup</button>
     </div>
-    
-    <nav>
-        <a href="index.html">Beranda</a>
+
+    <nav aria-label="Navigasi Utama">
+        <a href="index.html">← Beranda</a>
+        <a href="buku-jurnal.html">Buku & Jurnal</a>
         <a href="writing.html">Writing</a>
         <a href="skills.html">Keahlian</a>
-        <a href="contact.html">Kontak</a>
     </nav>
 
-    <main>
-        <h1>Mari Terhubung</h1>
-        
-        <div class="card">
-            <h3>Undang Saya (WhatsApp)</h3>
-            <p>Untuk kebutuhan narasumber, konsultansi, atau kolaborasi:</p>
-            <a href="https://wa.me/6282334737135?text=Halo%20Alfian,%20saya%20tertarik%20mengundang%20Anda" class="btn btn-wa">Chat Sekarang</a>
-            <p>Email: <strong>me@alfianay.com</strong></p>
-        </div>
+    <header>
+        <h1>Kontak & Kolaborasi</h1>
+        <p>Silakan hubungi saya untuk konsultasi, kerja sama proyek, atau diskusi seputar inklusi.</p>
+    </header>
 
-        <div class="card">
-            <h3>Sosial Media</h3>
-            <p>Ikuti kanal resmi saya untuk update harian:</p>
-            <a href="https://www.linkedin.com/in/alfian-andhika-yudhistira-73786a12a" class="btn btn-li" target="_blank">LinkedIn</a>
-            <a href="https://www.youtube.com/channel/UC6_34TWByyt-T3GRrIgq04g" class="btn btn-yt" target="_blank">YouTube</a>
-            <a href="https://tiktok.com/@Alfian_ay" class="btn btn-tk" target="_blank">TikTok</a>
-            <a href="https://instagram.com/Alfianandika" class="btn btn-ig" target="_blank">Instagram</a>
-        </div>
+    <main id="main-content">
+        
+        <section class="contact-info">
+            <h2>Detail Kontak</h2>
+            <ul class="contact-list">
+                <li>
+                    <span>📍</span>
+                    <div><strong>Alamat Kantor:</strong><br>Kemendes PDT, Jakarta, Indonesia</div>
+                </li>
+                <li>
+                    <span>📧</span>
+                    <div><strong>Email:</strong><br><a href="mailto:me@alfianay.com">me@alfianay.com</a></div>
+                </li>
+                <li>
+                    <span>📱</span>
+                    <div><strong>WhatsApp:</strong><br><a href="https://wa.me/6282334737135" target="_blank">082334737135</a></div>
+                </li>
+                <li>
+                    <span>🔗</span>
+                    <div><strong>LinkedIn:</strong><br><a href="https://www.linkedin.com/in/alfian-andhika-yudhistira-73786a12a" target="_blank">Alfian Andhika Yudhistira</a></div>
+                </li>
+                <li>
+                    <span>📸</span>
+                    <div><strong>Instagram:</strong><br><a href="https://instagram.com/Alfianandika" target="_blank">@Alfianandika</a></div>
+                </li>
+                <li>
+                    <span>🎵</span>
+                    <div><strong>TikTok:</strong><br><a href="https://www.tiktok.com/@Alfian_ay" target="_blank">@Alfian_ay</a></div>
+                </li>
+            </ul>
+        </section>
+
+        <section class="contact-form">
+            <h2>Kirim Pesan</h2>
+            <form id="direct-contact">
+                <div class="form-group">
+                    <label for="c-name">Nama Lengkap:</label>
+                    <input type="text" id="c-name" name="name" required placeholder="Masukkan nama Anda">
+                </div>
+                <div class="form-group">
+                    <label for="c-email">Alamat Email:</label>
+                    <input type="email" id="c-email" name="email" required placeholder="nama@email.com">
+                </div>
+                <div class="form-group">
+                    <label for="c-msg">Pesan atau Keperluan:</label>
+                    <textarea id="c-msg" name="message" rows="5" required placeholder="Tuliskan pesan Anda di sini..."></textarea>
+                </div>
+                <button type="submit" class="btn-send">Kirim Sekarang</button>
+            </form>
+            <div id="form-status" aria-live="polite" style="margin-top: 15px; font-weight: bold; color: var(--green-aaa);"></div>
+        </section>
+
     </main>
 
-    <div class="footer-container">
-        <section class="newsletter-box">
-            <h3>Newsletter Alfianay</h3>
-            <p>Dapatkan update tulisan langsung di inbox Anda.</p>
-            <form action="https://formspree.io/f/alfianandikay@gmail.com" method="POST">
-                <input type="email" name="email" placeholder="Alamat Email Anda" required aria-label="Masukkan Email">
-                <button type="submit" class="btn-sub">Subscribe</button>
-            </form>
-        </section>
+    <footer role="contentinfo">
+        <div class="footer-links">
+            <a href="accessibility.html">Aksesibilitas</a> | 
+            <a href="privacy.html">Privasi</a> | 
+            <a href="terms.html">Ketentuan</a>
+        </div>
+        <p>&copy; 2026 Alfian Andhika Yudhistira</p>
+    </footer>
 
-        <section class="stats-section">
-            <p>📊 Pengunjung Hari Ini: 15 | 📈 Total Pengunjung: 1,250</p>
-        </section>
+    <script>
+        function toggleA11yMenu() { document.getElementById('a11y-menu').classList.toggle('active'); }
+        function ubahFont(u) { document.getElementById('bodi').style.fontSize = (u * 1.2) + 'rem'; }
+        function gantiKontras() { document.body.classList.toggle('high-contrast'); }
 
-        <footer>
-            <div class="footer-links">
-                <a href="accessibility.html">Aksesibilitas</a> | 
-                <a href="privacy.html">Privasi</a> | 
-                <a href="terms.html">Ketentuan</a>
-            </div>
-            <p>&copy; 2026 Alfian Andhika Yudhistira. All Rights Reserved.</p>
-        </footer>
-    </div>
+        // Sederhana: Simulasi Pengiriman
+        document.getElementById('direct-contact').onsubmit = function(e) {
+            e.preventDefault();
+            document.getElementById('form-status').innerText = "Pesan terkirim! Saya akan menghubungi Anda segera.";
+            this.reset();
+        };
+    </script>
 </body>
 </html>
