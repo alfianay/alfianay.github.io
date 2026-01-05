@@ -3,77 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alfian Andhika Yudhistira, M.KP. | Inklusi Dari Diri Sendiri</title>
-    
+    <title>Alfian Andhika Yudhistira | Inklusi Dari Diri Sendiri</title>
     <style>
         :root { 
-            --green-aaa: #002d26; 
-            --accent: #ffea00; 
-            --bg-body: #ffffff;
-            --text-color: #121212;
-            --hero-bg: #f0fdf4;
-            --card-bg: #fcfcfc;
+            --green-aaa: #002d26; --accent: #ffea00; --bg-body: #ffffff;
+            --text-color: #121212; --hero-bg: #f0fdf4; --card-bg: #fcfcfc;
         }
-
         body.high-contrast {
             --green-aaa: #ffea00; --bg-body: #000000; --text-color: #ffffff;
             --accent: #ffffff; --hero-bg: #1a1a1a; --card-bg: #111111;
             background-color: #000 !important; color: #fff !important;
         }
-
-        body { 
-            font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.8; 
-            color: var(--text-color); max-width: 1050px; margin: 0 auto; 
-            background: var(--bg-body); font-size: 1.2rem; transition: 0.3s;
-        }
-
-        /* FLOATING ICON ♿ */
-        .a11y-toggle-btn {
-            position: fixed; bottom: 20px; right: 20px;
-            background: var(--green-aaa); color: var(--accent);
-            border: 3px solid #000; width: 65px; height: 65px;
-            border-radius: 50%; cursor: pointer; z-index: 1002;
-            font-size: 2.2rem; display: flex; align-items: center; justify-content: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-        }
-
-        .a11y-toolbar { 
-            display: none; background: #f1f5f9; padding: 15px; text-align: center; 
-            border-bottom: 4px solid var(--green-aaa); position: sticky; top: 0; z-index: 1001;
-        }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.8; color: var(--text-color); max-width: 1050px; margin: 0 auto; background: var(--bg-body); font-size: 1.2rem; transition: 0.3s; }
+        
+        /* AKSESIBILITAS */
+        .a11y-toggle-btn { position: fixed; bottom: 20px; right: 20px; background: var(--green-aaa); color: var(--accent); border: 3px solid #000; width: 65px; height: 65px; border-radius: 50%; cursor: pointer; z-index: 1002; font-size: 2.2rem; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(0,0,0,0.4); }
+        .a11y-toolbar { display: none; background: #f1f5f9; padding: 15px; text-align: center; border-bottom: 4px solid var(--green-aaa); position: sticky; top: 0; z-index: 1001; }
         .a11y-toolbar.active { display: block; }
         .a11y-toolbar button { background: var(--green-aaa); color: white; border: 2px solid #000; padding: 10px 18px; margin: 5px; cursor: pointer; font-weight: bold; border-radius: 5px; }
-
-        .skip-links a {
-            position: absolute; top: -100px; left: 50%; transform: translateX(-50%);
-            background: var(--accent); color: #000; padding: 15px; z-index: 1001; font-weight: bold; border: 2px solid #000; text-decoration: none;
-        }
+        .skip-links a { position: absolute; top: -100px; left: 50%; transform: translateX(-50%); background: var(--accent); color: #000; padding: 15px; z-index: 1001; font-weight: bold; border: 2px solid #000; text-decoration: none; }
         .skip-links a:focus { top: 10px; }
 
         header { padding: 40px 20px; text-align: center; border-bottom: 10px solid var(--green-aaa); }
-        .logo { width: 180px; }
-        
         nav { background: var(--green-aaa); padding: 15px 0; text-align: center; }
-        nav ul { list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
-        nav a { color: #ffffff; font-weight: bold; text-decoration: underline; }
+        nav a { color: #ffffff; margin: 0 15px; font-weight: bold; text-decoration: underline; }
 
         main { padding: 40px 20px; }
-        .hero-box { background: var(--hero-bg); padding: 40px; border-radius: 20px; border: 3px solid var(--green-aaa); margin-bottom: 50px; }
-        .quote { font-size: 1.4rem; font-weight: 600; font-style: italic; color: var(--green-aaa); }
-
+        .hero-box { background: var(--hero-bg); padding: 40px; border-radius: 20px; border: 3px solid var(--green-aaa); margin-bottom: 40px; }
         .card { border: 2px solid var(--green-aaa); padding: 25px; border-radius: 12px; margin-bottom: 30px; background: var(--card-bg); }
-        .media-list { padding-left: 20px; list-style-type: square; }
-        .media-list li { margin-bottom: 15px; border-bottom: 1px solid #ddd; padding-bottom: 5px; }
         .media-list a { color: #0056b3; font-weight: bold; text-decoration: underline; }
         body.high-contrast .media-list a { color: var(--accent); }
 
-        .newsletter-section { background: var(--green-aaa); color: #fff; padding: 60px 30px; border-radius: 20px; text-align: center; margin-top: 50px; }
-        .form-group { max-width: 500px; margin: 0 auto 20px; text-align: left; }
-        input { width: 100%; padding: 15px; border-radius: 8px; border: 4px solid var(--accent); font-size: 1.1rem; box-sizing: border-box; }
-        .btn-sub { background: var(--accent); color: #000; padding: 15px 50px; border: 2px solid #000; border-radius: 8px; font-weight: 900; cursor: pointer; }
-
-        footer { background: #111; color: #fff; padding: 50px 20px; text-align: center; margin-top: 50px; }
-        .footer-links a { color: #fff; margin: 0 10px; }
+        .newsletter-section { background: var(--green-aaa); color: #fff; padding: 50px 30px; border-radius: 20px; text-align: center; }
+        .btn-sub { background: var(--accent); color: #000; padding: 15px 50px; border-radius: 8px; font-weight: 900; cursor: pointer; border: 2px solid #000; }
+        footer { background: #111; color: #fff; padding: 40px; text-align: center; margin-top: 50px; }
     </style>
 </head>
 <body id="bodi">
@@ -84,7 +47,6 @@
     </div>
 
     <button class="a11y-toggle-btn" onclick="toggleA11yMenu()" aria-label="Menu Aksesibilitas">♿</button>
-
     <div id="a11y-menu" class="a11y-toolbar">
         <button onclick="ubahFont(1.2)">Teks Besar</button>
         <button onclick="ubahFont(1.0)">Teks Normal</button>
@@ -93,79 +55,69 @@
     </div>
 
     <header role="banner">
-        <img src="Logo tanpa background.png" alt="Logo Alfianay" class="logo">
-        <h1>Alfian Andhika Yudhistira, M.KP.</h1>
-        <p><strong>Penelaah Teknis Kebijakan & Konsultan Aksesibilitas Digital</strong></p>
+        <img src="Logo tanpa background.png" alt="Logo Alfianay" style="width:180px;">
+        <h1>Alfian Andhika Yudhistira</h1>
+        <p><strong>Penelaah Teknis Kebijakan di Kemendes PDT & Konsultan Aksesibilitas Digital</strong></p>
     </header>
 
     <nav aria-label="Menu Utama">
-        <ul>
-            <li><a href="index.html">Beranda</a></li>
-            <li><a href="writing.html">Writing</a></li>
-            <li><a href="skills.html">Keahlian</a></li>
-            <li><a href="contact.html">Kontak</a></li>
-        </ul>
+        <a href="index.html">Beranda</a>
+        <a href="buku-jurnal.html">Buku & Jurnal</a>
+        <a href="writing.html">Writing</a>
+        <a href="skills.html">Keahlian</a>
+        <a href="contact.html">Kontak</a>
     </nav>
 
-    <main id="main-content" role="main">
+    <main id="main-content">
         <section class="hero-box">
-            <p class="quote">"Banyak orang berbicara 'kita harus mulai inklusi', faktanya apa-apa masih dilakukan secara eksklusif. Pesan tentang inklusi tak sekadar teori, melainkan melalui pengalaman agar bisa dinikmati dan dipelajari semua orang."</p>
-            <p style="margin-top: 25px;">Halo, saya <strong>Alfian</strong>. Saya adalah alumnus Magister Kebijakan Publik dan S1 Antropologi Universitas Airlangga. Perjalanan hidup dan akademik saya dedikasikan untuk pembangunan sumber daya manusia yang inklusif, kepemimpinan disabilitas, serta memastikan lingkungan digital dapat diakses secara setara oleh semua individu tanpa hambatan.</p>
+            <h2 style="margin-top:0;">Inklusi Dari Diri Sendiri.</h2>
+            <p>Saya adalah alumnus Magister Kebijakan Publik dan S1 Antropologi Universitas Airlangga. Fokus saya pada pembangunan sumber daya manusia dan kepemimpinan disabilitas yang inklusif serta lingkungan fisik dan digital yang akses untuk semua.</p>
         </section>
 
-        <section aria-labelledby="judul-karya">
-            <h2 id="judul-karya" style="color: var(--green-aaa)">Buku & Karya Tulis</h2>
+        <section aria-labelledby="judul-pub">
+            <h2 id="judul-pub" style="color: var(--green-aaa)">Publikasi & Karya Tulis</h2>
             <div class="card">
+                <p>Kumpulan karya tulis ilmiah dan panduan praktis yang telah saya publikasikan:</p>
                 <ul class="media-list">
-                    <li><strong>Buku Saku:</strong> "Enjoy Membangun Hubungan Kerja Dengan Pegawai Disabilitas Netra"</li>
-                    <li><strong>Tesis Magister:</strong> "Kapasitas Individu Penyelenggara Pemilu: Studi Kasus Pemilu 2019 Bagi Pemilih Disabilitas di Kota Surabaya"</li>
-                    <li><strong>Kumpulan Artikel:</strong> <a href="writing.html">Lihat publikasi dan karya tulis selengkapnya di halaman Writing</a></li>
+                    <li><strong>Buku Saku:</strong> Enjoy Membangun Hubungan Kerja Dengan Pegawai Disabilitas Netra.</li>
+                    <li><strong>Karya Ilmiah:</strong> Prosiding International Conference (ICOCSPA) 2022.</li>
                 </ul>
+                <a href="buku-jurnal.html" style="font-weight:bold; color:var(--green-aaa);">[ Buka Halaman Buku & Jurnal untuk Baca/Download ]</a>
             </div>
         </section>
 
-        <section aria-labelledby="judul-media">
-            <h2 id="judul-media" style="color: var(--green-aaa)">Liputan Media</h2>
+        <section aria-labelledby="judul-prestasi">
+            <h2 id="judul-prestasi" style="color: var(--green-aaa)">Prestasi Utama</h2>
             <div class="card">
                 <ul class="media-list">
-                    <li><strong>tvOne (Video 1):</strong> <a href="https://www.youtube.com/watch?v=D-v7WfV0Rnc" target="_blank">Wisudawan Tunanetra Pertama Magister UNAIR - tvOne News</a></li>
-                    <li><strong>tvOne (Video 2):</strong> <a href="https://www.youtube.com/watch?v=FOfR0-i7pWk" target="_blank">Inspirasi Alfian: Menembus Batas - tvOne</a></li>
-                    <li><strong>Mojok.co:</strong> <a href="https://mojok.co/liputan/sosok/pembuktian-alfian-dianggap-sebelah-mata-karena-buta-kini-diangkat-pns-dan-raih-gelar-s2/" target="_blank">Pembuktian Alfian: Kini PNS & Raih Gelar S2 - Mojok</a></li>
-                    <li><strong>DetikEdu:</strong> <a href="https://www.detik.com/edu/edutainment/d-7702336/kisah-alfian-wisudawan-tunanetra-pertama-unair-sukses-raih-gelar-s2" target="_blank">Kisah Alfian Wisudawan Tunanetra Pertama S2 - Detik.com</a></li>
-                    <li><strong>Kompas:</strong> <a href="https://www.kompas.com/edu/read/2024/12/26/110638671/sosok-alfian-wisudawan-unair-yang-raih-gelar-s2" target="_blank">Sosok Alfian Wisudawan UNAIR Raih Gelar S2 - Kompas</a></li>
-                    <li><strong>Official UNAIR:</strong> <a href="https://unair.ac.id/kisah-inspiratif-alfian-wisudawan-tunanetra-pertama-magister-unair/" target="_blank">Kisah Inspiratif Alfian - Official UNAIR</a></li>
+                    <li>Juara 2 e-Design Group Global IT Challenge For Youth Disabilities Tingkat Nasional 2015.</li>
+                    <li>Penerima Beasiswa XL Future Leaders (2017-2019).</li>
+                    <li>Juara 1 OSN Matematika SMA Inklusi Jawa Timur 2015.</li>
                 </ul>
             </div>
         </section>
 
         <section class="newsletter-section" id="newsletter-target">
             <h2>Berlangganan Newsletter</h2>
-            <p>Dapatkan update artikel aksesibilitas langsung di email Anda.</p>
             <form id="subs-form">
-                <div class="form-group">
-                    <label for="user-name" style="color:inherit">Nama Lengkap:</label>
-                    <input type="text" id="user-name" required placeholder="Masukkan Nama Anda">
+                <div style="max-width:500px; margin:auto; text-align:left;">
+                    <label for="u-name">Nama:</label><input type="text" id="u-name" required placeholder="Nama Anda" style="width:100%; padding:10px; margin:10px 0;">
+                    <label for="u-email">Email:</label><input type="email" id="u-email" required placeholder="nama@email.com" style="width:100%; padding:10px; margin:10px 0;">
+                    <button type="submit" class="btn-sub">Daftar Sekarang</button>
                 </div>
-                <div class="form-group">
-                    <label for="user-email" style="color:inherit">Alamat Email:</label>
-                    <input type="email" id="user-email" required placeholder="nama@email.com">
-                </div>
-                <button type="submit" class="btn-sub">Daftar Sekarang</button>
             </form>
-            <div id="status" aria-live="polite" style="margin-top:20px; font-weight:bold;"></div>
+            <div id="status" style="margin-top:20px; font-weight:bold;"></div>
         </section>
     </main>
 
     <footer>
-        <div class="footer-links"><a href="accessibility.html" style="color:#fff">Aksesibilitas</a> | <a href="privacy.html" style="color:#fff">Privasi</a> | <a href="terms.html" style="color:#fff">Ketentuan</a></div>
-        <p style="margin-top: 20px;">&copy; 2026 Alfian Andhika Yudhistira. All Rights Reserved.</p>
+        <p>&copy; 2026 Alfian Andhika Yudhistira</p>
     </footer>
 
     <script>
         function toggleA11yMenu() { document.getElementById('a11y-menu').classList.toggle('active'); }
         function ubahFont(u) { document.getElementById('bodi').style.fontSize = (u * 1.2) + 'rem'; }
         function gantiKontras() { document.body.classList.toggle('high-contrast'); }
-        document.getElementById('subs-form').onsubmit = function(e) { e.preventDefault(); document.getElementById('status').innerHTML = "Terima kasih, pendaftaran sedang diproses!"; };
     </script>
 </body>
 </html>
