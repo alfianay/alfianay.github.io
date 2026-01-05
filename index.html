@@ -27,24 +27,24 @@
             background: var(--bg-body); font-size: 1.2rem; transition: 0.3s;
         }
 
-        /* 1. TOMBOL IKON AKSESIBILITAS (MELAYANG/FLOATING) */
+        /* 1. FLOATING ACCESSIBILITY ICON */
         .a11y-toggle-btn {
             position: fixed; bottom: 20px; right: 20px;
             background: var(--green-aaa); color: var(--accent);
-            border: 2px solid #000; width: 60px; height: 60px;
+            border: 2px solid #000; width: 65px; height: 65px;
             border-radius: 50%; cursor: pointer; z-index: 1002;
             font-size: 2rem; display: flex; align-items: center; justify-content: center;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
         }
 
-        /* 2. PANEL TOOLBAR (SEMBUNYI SECARA DEFAULT) */
+        /* 2. TOOLBAR (HIDDEN BY DEFAULT) */
         .a11y-toolbar { 
-            display: none; /* Sembunyi */
+            display: none; 
             background: #f1f5f9; padding: 15px; text-align: center; 
             border-bottom: 4px solid var(--green-aaa); 
             position: sticky; top: 0; z-index: 1001;
         }
-        .a11y-toolbar.active { display: block; } /* Muncul saat diklik */
+        .a11y-toolbar.active { display: block; }
 
         .a11y-toolbar button { 
             background: var(--green-aaa); color: white; border: 2px solid #000; 
@@ -69,9 +69,11 @@
         main { padding: 40px 20px; }
         .hero-box { background: var(--hero-bg); padding: 40px; border-radius: 20px; border: 3px solid var(--green-aaa); margin-bottom: 50px; }
         
+        /* MEDIA SECTION (CORRECTED) */
         .card { border: 2px solid var(--green-aaa); padding: 25px; border-radius: 12px; margin-bottom: 30px; background: var(--card-bg); }
-        .media-list { padding-left: 20px; }
+        .media-list { padding-left: 20px; list-style-type: square; }
         .media-list li { margin-bottom: 15px; border-bottom: 1px solid #ddd; padding-bottom: 5px; }
+        .media-list a { color: inherit; font-weight: bold; text-decoration: underline; }
 
         .newsletter-section { background: var(--green-aaa); color: #fff; padding: 60px 30px; border-radius: 20px; text-align: center; }
         .form-group { max-width: 500px; margin: 0 auto 20px; text-align: left; }
@@ -89,12 +91,12 @@
         <a href="#newsletter-target">Skip ke Newsletter</a>
     </div>
 
-    <button class="a11y-toggle-btn" onclick="toggleA11yMenu()" aria-label="Buka Menu Aksesibilitas" title="Menu Aksesibilitas">
+    <button class="a11y-toggle-btn" onclick="toggleA11yMenu()" aria-label="Buka Menu Aksesibilitas">
         ♿
     </button>
 
     <div id="a11y-menu" class="a11y-toolbar">
-        <button onclick="ubahFont(1.2)">Teks Besar</button>
+        <button onclick="ubahFont(1.2)">Teks Lebih Besar</button>
         <button onclick="ubahFont(1.0)">Teks Normal</button>
         <button onclick="gantiKontras()">Mode Kontras Tinggi</button>
         <button onclick="toggleA11yMenu()" style="background:#cc0000;">Tutup</button>
@@ -124,19 +126,20 @@
         </section>
 
         <section aria-labelledby="judul-media">
-            <h2 id="judul-media" style="color: var(--green-aaa)">Liputan Media</h2>
+            <h2 id="judul-media" style="color: var(--green-aaa)">Liputan Media Nasional</h2>
             <div class="card">
                 <ul class="media-list">
-                    <li><strong>UNAIR:</strong> <a href="https://unair.ac.id/kisah-inspiratif-alfian-wisudawan-tunanetra-pertama-magister-unair/" target="_blank" style="color:inherit">Wisudawan Tunanetra Pertama Magister UNAIR</a></li>
-                    <li><strong>Mojok:</strong> <a href="https://mojok.co/liputan/sosok/pembuktian-alfian-dianggap-sebelah-mata-karena-buta-kini-diangkat-pns-dan-raih-gelar-s2/" target="_blank" style="color:inherit">Pembuktian Alfian Raih S2 & PNS - Mojok</a></li>
-                    <li><strong>Detik:</strong> <a href="https://www.detik.com/edu/edutainment/d-7702336/kisah-alfian-wisudawan-tunanetra-pertama-unair-sukses-raih-gelar-s2" target="_blank" style="color:inherit">Wisudawan Tunanetra Pertama S2 - DetikEdu</a></li>
-                    <li><strong>Kompas:</strong> <a href="https://www.kompas.com/edu/read/2024/12/26/110638671/sosok-alfian-wisudawan-unair-yang-raih-gelar-s2" target="_blank" style="color:inherit">Sosok Alfian Magister UNAIR - Kompas</a></li>
+                    <li><strong>UNAIR:</strong> <a href="https://unair.ac.id/kisah-inspiratif-alfian-wisudawan-tunanetra-pertama-magister-unair/" target="_blank">Kisah Alfian Wisudawan Tunanetra Pertama Magister UNAIR</a></li>
+                    <li><strong>Mojok:</strong> <a href="https://mojok.co/liputan/sosok/pembuktian-alfian-dianggap-sebelah-mata-karena-buta-kini-diangkat-pns-dan-raih-gelar-s2/" target="_blank">Pembuktian Alfian Raih S2 & PNS - Liputan Sosok Mojok</a></li>
+                    <li><strong>DetikEdu:</strong> <a href="https://www.detik.com/edu/edutainment/d-7702336/kisah-alfian-wisudawan-tunanetra-pertama-unair-sukses-raih-gelar-s2" target="_blank">Kisah Alfian Wisudawan Tunanetra Pertama S2 - Detik.com</a></li>
+                    <li><strong>Kompas:</strong> <a href="https://www.kompas.com/edu/read/2024/12/26/110638671/sosok-alfian-wisudawan-unair-yang-raih-gelar-s2" target="_blank">Sosok Alfian Wisudawan UNAIR Raih Gelar S2 - Kompas.com</a></li>
                 </ul>
             </div>
         </section>
 
         <section class="newsletter-section" id="newsletter-target">
             <h2>Berlangganan Newsletter</h2>
+            <p>Dapatkan update artikel aksesibilitas langsung di email Anda.</p>
             <form id="subs-form">
                 <div class="form-group">
                     <label for="user-name" style="color:inherit">Nama Lengkap:</label>
@@ -161,16 +164,4 @@
 
     <script>
         function toggleA11yMenu() {
-            const menu = document.getElementById('a11y-menu');
-            menu.classList.toggle('active');
-        }
-        function ubahFont(ukuran) { document.getElementById('bodi').style.fontSize = (ukuran * 1.2) + 'rem'; }
-        function gantiKontras() { document.body.classList.toggle('high-contrast'); }
-        document.getElementById('subs-form').onsubmit = function(e) {
-            e.preventDefault();
-            const name = document.getElementById('user-name').value;
-            document.getElementById('status').innerHTML = "Terima kasih " + name + ", pendaftaran diproses!";
-        };
-    </script>
-</body>
-</html>
+            document.getElementById('a11y-menu').classList.toggle('active');
