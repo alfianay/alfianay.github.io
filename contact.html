@@ -10,7 +10,7 @@
         .logo { max-width: 120px; }
         nav { background: #004d40; position: sticky; top: 0; z-index: 999; padding: 12px 0; text-align: center; }
         nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
-        main { background: white; padding: 40px; box-shadow: 0 0 20px rgba(0,0,0,0.1); }
+        main { background: white; padding: 40px; box-shadow: 0 0 20px rgba(0,0,0,0.1); min-height: 400px; }
         h1 { color: #004d40; border-bottom: 3px solid #004d40; padding-bottom: 10px; }
         .card { background: #f9f9f9; padding: 20px; border-radius: 8px; border: 1px solid #ddd; margin-bottom: 25px; text-align: center; }
         .btn { display: inline-block; padding: 12px 25px; text-decoration: none; border-radius: 5px; font-weight: bold; margin: 10px; color: white; min-width: 160px; }
@@ -20,17 +20,14 @@
         .btn-tk { background: #000000; }
         .btn-ig { background: #e1306c; }
         
-        /* NEWSLETTER BOX */
-        .newsletter-box { background: #004d40; color: white; padding: 30px; text-align: center; border-radius: 10px; margin-top: 40px; }
+        /* FOOTER AREA (NEWSLETTER + STATS + LEGAL) */
+        .footer-container { margin-top: 40px; }
+        .newsletter-box { background: #004d40; color: white; padding: 30px; text-align: center; border-radius: 10px 10px 0 0; }
         .newsletter-box input { padding: 12px; width: 60%; max-width: 300px; border-radius: 5px; border: none; margin-bottom: 10px; font-size: 1rem; }
         .btn-sub { background: #ffca28; color: #333; padding: 12px 25px; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; }
-
-        /* STATS SECTION */
-        .stats-section { background: #e0f2f1; padding: 20px; text-align: center; font-weight: bold; color: #004d40; border-top: 2px solid #004d40; }
-        
-        /* FOOTER LEGAL & COPYRIGHT */
-        footer { background: #222; color: white; text-align: center; padding: 30px; }
-        .footer-links { margin-bottom: 15px; }
+        .stats-section { background: #e0f2f1; padding: 15px; text-align: center; font-weight: bold; color: #004d40; border-top: 1px solid #004d40; border-bottom: 1px solid #004d40; }
+        footer { background: #222; color: white; text-align: center; padding: 30px; border-radius: 0 0 10px 10px; }
+        .footer-links { margin-bottom: 10px; }
         .footer-links a { color: #e0f2f1; margin: 0 10px; text-decoration: none; font-size: 0.85rem; }
     </style>
 </head>
@@ -50,42 +47,44 @@
         <h1>Mari Terhubung</h1>
         
         <div class="card">
-            <h3>Undang Saya (Fast Response)</h3>
-            <p>Untuk kebutuhan narasumber, konsultansi aksesibilitas, atau kolaborasi lainnya:</p>
-            <a href="https://wa.me/6282334737135?text=Halo%20Alfian,%20saya%20tertarik%20mengundang%20Anda" class="btn btn-wa">WhatsApp Sekarang</a>
+            <h3>Undang Saya (WhatsApp)</h3>
+            <p>Untuk kebutuhan narasumber, konsultansi, atau kolaborasi:</p>
+            <a href="https://wa.me/6282334737135?text=Halo%20Alfian,%20saya%20tertarik%20mengundang%20Anda" class="btn btn-wa">Chat Sekarang</a>
             <p>Email: <strong>me@alfianay.com</strong></p>
         </div>
 
         <div class="card">
-            <h3>Ikuti di Media Sosial</h3>
-            <p>Berlangganan konten edukasi saya di berbagai platform:</p>
+            <h3>Sosial Media</h3>
+            <p>Ikuti kanal resmi saya untuk update harian:</p>
             <a href="https://www.linkedin.com/in/alfian-andhika-yudhistira-73786a12a" class="btn btn-li" target="_blank">LinkedIn</a>
             <a href="https://www.youtube.com/channel/UC6_34TWByyt-T3GRrIgq04g" class="btn btn-yt" target="_blank">YouTube</a>
             <a href="https://tiktok.com/@Alfian_ay" class="btn btn-tk" target="_blank">TikTok</a>
             <a href="https://instagram.com/Alfianandika" class="btn btn-ig" target="_blank">Instagram</a>
         </div>
-
-        <section class="newsletter-box">
-            <h3>Newsletter Alfianay</h3>
-            <p>Jangan ketinggalan informasi terbaru. Masukkan email Anda di bawah ini:</p>
-            <form action="https://formspree.io/f/alfianandikay@gmail.com" method="POST">
-                <input type="email" name="email" placeholder="Alamat Email Anda" required aria-label="Masukkan Email untuk Langganan">
-                <button type="submit" class="btn-sub">Daftar Newsletter</button>
-            </form>
-        </section>
     </main>
 
-    <section class="stats-section">
-        <p>📊 Pengunjung Hari Ini: 15 | 📈 Total Pengunjung: 1,250</p>
-    </section>
+    <div class="footer-container">
+        <section class="newsletter-box">
+            <h3>Newsletter Alfianay</h3>
+            <p>Dapatkan update tulisan langsung di inbox Anda.</p>
+            <form action="https://formspree.io/f/alfianandikay@gmail.com" method="POST">
+                <input type="email" name="email" placeholder="Alamat Email Anda" required aria-label="Masukkan Email">
+                <button type="submit" class="btn-sub">Subscribe</button>
+            </form>
+        </section>
 
-    <footer>
-        <div class="footer-links">
-            <a href="accessibility.html">Aksesibilitas</a> | 
-            <a href="privacy.html">Privasi</a> | 
-            <a href="terms.html">Ketentuan</a>
-        </div>
-        <p>&copy; 2026 Alfian Andhika Yudhistira. All Rights Reserved.</p>
-    </footer>
+        <section class="stats-section">
+            <p>📊 Pengunjung Hari Ini: 15 | 📈 Total Pengunjung: 1,250</p>
+        </section>
+
+        <footer>
+            <div class="footer-links">
+                <a href="accessibility.html">Aksesibilitas</a> | 
+                <a href="privacy.html">Privasi</a> | 
+                <a href="terms.html">Ketentuan</a>
+            </div>
+            <p>&copy; 2026 Alfian Andhika Yudhistira. All Rights Reserved.</p>
+        </footer>
+    </div>
 </body>
 </html>
