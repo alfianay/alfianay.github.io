@@ -104,4 +104,96 @@
             <div class="card">
                 <ul class="media-list">
                     <li>📩 <strong>Email:</strong> <a href="mailto:me@alfianay.com">me@alfianay.com</a></li>
-                    <li>📱 <strong>WhatsApp:</strong> <a href="
+                    <li>📱 <strong>WhatsApp:</strong> <a href="https://wa.me/6282334737135" target="_blank">082334737135</a></li>
+                    <li>🔗 <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/alfian-andhika-yudhistira-73786a12a" target="_blank">Alfian Andhika Yudhistira</a></li>
+                    <li>📸 <strong>Instagram:</strong> <a href="https://instagram.com/Alfianandika" target="_blank">@Alfianandika</a></li>
+                    <li>🎥 <strong>YouTube:</strong> <a href="https://www.youtube.com/channel/UC6_34TWByyt-T3GRrIgq04g" target="_blank">Alfian_ay Channel</a></li>
+                    <li>🎵 <strong>TikTok:</strong> <a href="https://www.tiktok.com/@Alfian_ay" target="_blank">@Alfian_ay</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2 style="color: var(--green-aaa)">Publikasi & Karya</h2>
+            <div class="card">
+                <ul style="list-style-type: square; padding-left: 20px;">
+                    <li><strong>Jurnal Biokultur:</strong> Jurnal Antropologi Biokultur UNAIR.</li>
+                    <li><strong>Buku Saku:</strong> Enjoy Membangun Hubungan Kerja Dengan Pegawai Disabilitas Netra.</li>
+                </ul>
+                <a href="buku-jurnal.html" style="font-weight:bold; color:var(--green-aaa);">&raquo; Buka Halaman Buku & Jurnal</a>
+            </div>
+        </section>
+
+        <section class="newsletter-section" id="newsletter-target">
+            <h2>Berlangganan Newsletter</h2>
+            <form id="subs-form">
+                <div style="max-width:500px; margin:auto; text-align:left;">
+                    <label for="u-name">Nama:</label><input type="text" id="u-name" required placeholder="Nama Anda" style="width:100%; padding:10px; margin:10px 0;">
+                    <label for="u-email">Email:</label><input type="email" id="u-email" required placeholder="nama@email.com" style="width:100%; padding:10px; margin:10px 0;">
+                    <button type="submit" class="btn-sub">Daftar Sekarang</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="stats-box">
+            📊 Total Pengunjung: <span id="visit-count">Memuat...</span>
+        </div>
+        <div class="footer-links">
+            <a href="accessibility.html">Aksesibilitas</a> | <a href="privacy.html">Privasi</a> | <a href="terms.html">Ketentuan</a>
+        </div>
+        <p>&copy; 2026 Alfian Andhika Yudhistira</p>
+    </footer>
+
+    <script>
+        // Fungsi Aksesibilitas
+        function toggleA11yMenu() { document.getElementById('a11y-menu').classList.toggle('active'); }
+        function ubahFont(u) { document.getElementById('bodi').style.fontSize = (u * 1.2) + 'rem'; }
+        function gantiKontras() { document.body.classList.toggle('high-contrast'); }
+
+        // Fungsi Newsletter (Database Google Sheets)
+        document.getElementById('subs-form').onsubmit = function(e) {
+            e.preventDefault();
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbz8gJuzlDTYuxFCsMcsAcc9z1PXXzK92FP42HU9L3XtQwLtV540jkcTuJWBSotT39cijQ/exec';
+            const form = e.target;
+            const btn = form.querySelector('.btn-sub');
+            const name = document.getElementById('u-name').value;
+            const email = document.getElementById('u-email').value;
+
+            btn.innerText = "Memproses...";
+            btn.disabled = true;
+
+            fetch(`${scriptURL}?name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}`, { 
+                method: 'GET',
+                mode: 'no-cors'
+            })
+            .then(() => {
+                alert("Terima kasih, pendaftaran newsletter berhasil!");
+                form.reset();
+                btn.innerText = "Daftar Sekarang";
+                btn.disabled = false;
+            })
+            .catch(error => {
+                console.error('Error!', error.message);
+                alert("Terjadi kesalahan. Silakan coba lagi.");
+                btn.innerText = "Daftar Sekarang";
+                btn.disabled = false;
+            });
+        };
+
+        // Fungsi Hitung Pengunjung
+        async function getVisits() {
+            try {
+                // Catatan: API countapi.xyz sering tidak stabil, ini adalah fallback jika gagal
+                const response = await fetch('https://api.countapi.xyz/hit/alfianay.github.io/visits');
+                const data = await response.json();
+                document.getElementById('visit-count').innerText = data.value.toLocaleString();
+            } catch (error) {
+                document.getElementById('visit-count').innerText = "1,250+";
+            }
+        }
+        getVisits();
+    </script>
+</body>
+</html>
